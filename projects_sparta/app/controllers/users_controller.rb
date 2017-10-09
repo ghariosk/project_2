@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
+
+	  before_action :authenticate_user!
+
   def index
-  	@A="Hello"
+  	
   end
 
   def show
-  	"Show"
+  	
   end
 end
