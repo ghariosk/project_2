@@ -4,17 +4,9 @@
 
 
 
-<% @projects.each do |element | %>
 
- <p> Name : <%= element.name %> </p>
- <p> Description : <%= element.desc %> </p>
-   <p> Image: <%= element.image %> </p>
- <p> Git : <%= element.git %> </p>
- <p> Registered : <%= element.approved %> </p>
-
- <hr />
+<%= render @projects %>
 
 
- <% end %>
 
 
