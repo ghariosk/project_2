@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-
  
   def index
       @projects=Project.all
@@ -89,7 +88,5 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:id, :name, :desc, :image, :git, :approved)
   end
-
-
 
 end
