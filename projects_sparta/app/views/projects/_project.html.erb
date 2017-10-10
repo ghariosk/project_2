@@ -6,9 +6,7 @@
  	<p> Registered : <%= project.approved %> </p>
 
  	<p> Email : <%=  @a = UserProject.all.where(project_id:project.id) %> </p>
-
-
-
+ 	
 	<%  @a.each_with_index do |element,index| %>
 
  		<%= User.find(element.user_id).email %>
@@ -18,11 +16,6 @@
 	<%= link_to "Show Page", project if action_name == "index" %> ||
 	<%= link_to "Edit Page", edit_project_path(project) %>
 
-
-
-
 <% end %>	
 
-
- 
  <hr />

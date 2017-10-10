@@ -1,6 +1,0 @@
-<p>Project Title: <%=%></p>
-<p>Project Date: <%=%></p>
-
-<%= link_to "Show Project", show_user_project_path(@user, project) unless controller_name == "projects" %>
-<%= link_to "Edit Project", edit_user_project_path(@user, project) if controller_name == "projects" %>
-<%= link_to "Delete Project", user_project_path(@user, project), method: :delete, data: { confirm: "Are you sure you want to delete this project?" } %>
