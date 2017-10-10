@@ -13,7 +13,7 @@ class PublicController < ApplicationController
 
 
   def home 
-  	"HOME"
+ @projects=Project.all
 
   end
 end
