@@ -16,11 +16,10 @@ class UsersController < ApplicationController
   end
 
   def create
-
+  	
     new_user = User.create(user_params)
     new_user.save
-
-    redirect_to new_user
+	redirect_to new_user
 
   end
 
