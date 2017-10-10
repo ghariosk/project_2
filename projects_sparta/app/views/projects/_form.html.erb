@@ -1,4 +1,4 @@
-<%= form_for([@user, @project]) do |f| %>
+<%= form_for([@user,@project]) do |f| %>
 
 <%= f.label :name %>
 <%= f.text_field :name %>
@@ -13,16 +13,29 @@
 <%= f.text_field :git %>
 
 
-<% if current_user.admin == true %>
+
 
 <%= f.label :approved %>
 <%= f.check_box :approved %>
 
 
-<% end %>
+
 
 
 <%= f.submit %>
 
 
 <% end %>
+
+
+
+<%= form_for(@userproject ) do |f| %>
+
+ <%= f.label :user_id %>
+ <%= f.text_field :user_id %>
+
+
+
+ <% f.submit %>
+
+ <% end %>
