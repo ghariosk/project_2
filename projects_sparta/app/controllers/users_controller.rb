@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
 	  before_action :authenticate_user!
 
   def index
@@ -23,9 +24,9 @@ class UsersController < ApplicationController
 
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  	def edit
+    	@user = User.find(params[:id])
+	end
 
   def update
 
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
 
   protected
   def user_params
-    params.require(:user).permit(:name,:email)
+    params.require(:user).permit(:name,:email,)
   end
 
 end
