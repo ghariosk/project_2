@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
  
   def index
-      @projects=Project.all
+      @projects=current_user.projects
 
 
   end
@@ -10,7 +10,8 @@ class ProjectsController < ApplicationController
 
     @user=current_user
    
-    @project= Project.all.find(params[:id])
+    @project= current_user.projects.find(params[:id])
+    
 
 
   end
