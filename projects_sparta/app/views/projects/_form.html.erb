@@ -12,8 +12,14 @@
 <%= f.label :git %>
 <%= f.text_field :git %>
 
+
+<% if current_user.admin == true %>
+
 <%= f.label :approved %>
 <%= f.check_box :approved %>
+
+
+<% end %>
 
 
 <%= f.submit %>

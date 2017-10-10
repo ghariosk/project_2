@@ -19,8 +19,10 @@
 
 
   UserProject.create!(user_id: 1, project_id: p1.id )
-  
+
   UserProject.create!(user_id: 2, project_id: p1.id )
+
+  UserProject.create!(user_id: 2, project_id: p2.id)
 
 
 

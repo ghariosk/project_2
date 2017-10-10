@@ -1,12 +1,29 @@
-
+<% if project.approved == true %>
  <p> Name : <%= project.name %> </p>
  <p> Description : <%= project.desc %> </p>
    <p> Image: <%= project.image %> </p>
  <p> Git : <%= project.git %> </p>
  <p> Registered : <%= project.approved %> </p>
 
- <p> Email : <%  UserProject.find_by(params[:project_id]).user_id %> </p>
+ <p> Email : <%=  @a = UserProject.all.where(project_id:project.id) %> </p>
 
- <p> <%= User.find(UserProject.find_by(params[:project_id]).users_id).email %> </p>
 
+
+ <%  @a.each_with_index do |element,index| %>
+
+ 		<%= User.find(element.user_id).email %>
+
+
+ 	
+
+
+ 	
+
+
+<% end %> 	
+
+<% end %>	
+
+
+ 
  <hr />
