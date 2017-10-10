@@ -31,9 +31,17 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+
+    @user=current_user
+    @project=@user.projects.find(params[:id])
+
   end
 
   def update
+    @user=current_user
+    update=@user.projects.find(params[:id]).update(project_params)
+
+    redirect_to user_projects_path
   end
 
   def destroy
