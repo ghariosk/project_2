@@ -5,5 +5,7 @@ devise_for :users
   	resources :projects
   end
 
+ root "users#index"
+
 end
  
