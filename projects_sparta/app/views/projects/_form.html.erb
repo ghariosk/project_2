@@ -1,0 +1,28 @@
+<%= form_for([@user, @project]) do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :desc %>
+<%= f.text_field :desc %>
+
+<%= f.label :image %>
+<%= f.text_field :image %>
+
+<%= f.label :git %>
+<%= f.text_field :git %>
+
+
+<% if current_user.admin == true %>
+
+<%= f.label :approved %>
+<%= f.check_box :approved %>
+
+
+<% end %>
+
+
+<%= f.submit %>
+
+
+<% end %>
