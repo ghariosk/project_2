@@ -18,6 +18,7 @@
   u1 = User.create!(email: "pri-8@hotmail.co.uk", password: "beloved")
 
 
+
   UserProject.create!(user_id: u1.id, project_id: p1.id )
   UserProject.create!(user_id: u1.id, project_id: p2.id )
   UserProject.create!(user_id: u1.id, project_id: p3.id )
