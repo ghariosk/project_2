@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
 	  before_action :authenticate_user!
 
   def index
@@ -12,5 +13,6 @@ class UsersController < ApplicationController
 
   	"Bookmarks"
   	
+
   end
 end
