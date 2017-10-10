@@ -51,7 +51,4 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:id, :name, :desc, :image, :git, :approved)
   end
-
-
->>>>>>> 9e3c99be54317b1cba120471ab1dd973f127f80c
 end

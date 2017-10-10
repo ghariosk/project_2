@@ -5,9 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-<<<<<<< HEAD
-asdfasdas
-=======
 
 # Records have been created for seeding into the database with default values.
 
@@ -22,5 +19,3 @@ asdfasdas
   UserProject.create!(user_id: 2, project_id: p2.id )
   UserProject.create!(user_id: 2, project_id: p3.id )
   UserProject.create!(user_id: 2, project_id: p4.id )
-
->>>>>>> 9e3c99be54317b1cba120471ab1dd973f127f80c
