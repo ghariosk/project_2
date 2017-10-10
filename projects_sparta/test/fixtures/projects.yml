@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  desc: MyString
+  image: MyString
+  git: MyString
+  approved: false
+
+two:
+  name: MyString
+  desc: MyString
+  image: MyString
+  git: MyString
+  approved: false

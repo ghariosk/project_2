@@ -1,0 +1,30 @@
+<h1>Projects</h1>
+
+<hr />
+
+
+
+
+<%= render @projects %>
+
+
+
+<% if user_signed_in? %>
+
+
+<%=  link_to "New", new_user_project_path(current_user) %>
+
+
+<% elsif %>
+
+
+ <%= link_to "New", new_user_session_path %>
+
+
+
+
+<% end %>
+
+
+
+

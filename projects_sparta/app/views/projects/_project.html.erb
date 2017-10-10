@@ -1,0 +1,64 @@
+
+ <p> Name : <%= project.name %> </p>
+ <p> Description : <%= project.desc %> </p>
+   <p> Image: <%= project.image %> </p>
+ <p> Git : <%= project.git %> </p>
+ <p> Registered : <%= project.approved %> </p>
+
+
+
+  <%  @a = UserProject.all.where(project_id:project.id) %> 
+
+
+
+
+
+<p> Participants </p>
+
+ <%  @a.each_with_index do |element,index| %>
+
+ 
+
+ 		<%= User.find(element.user_id).email %>
+
+
+ 		<% if index == 0 %>
+
+
+ 		<%= link_to "Show", user_project_path(User.find(element.user_id), Project.find(project.id)) %>	
+
+ 		<% end %>
+
+
+ 		
+  <% if user_signed_in? %>
+
+ 		<%= link_to "Edit", edit_user_project_path(User.find(element.user_id), Project.find(project.id)) %>
+
+
+<%= link_to "Delete", user_project_path(User.find(element.user_id), Project.find(project.id)), method: :delete  %>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+  <br>
+
+
+<% end %> 
+
+
+
+
+
+
+
+ 
+ <hr />
