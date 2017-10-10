@@ -12,7 +12,7 @@
 
   p1 = Project.create!(name: "Sparta Invader", desc: "A web-game based on the classic Space Invader. Watch out, it's addictive ! " , image: 'url', git: "URL", approved: true)
 
-  p2= Project.create!(name: "Hangman", desc: " The famous Hangman game, in a webpage !", image: 'url' , git:"URL 2" , approved: true)
+  p2 = Project.create!(name: "Hangman", desc: " The famous Hangman game, in a webpage !", image: 'url' , git:"URL 2" , approved: true)
 
 
 
