@@ -29,36 +29,4 @@
 
  		<% end %>
 
-
- 		
-  <% if user_signed_in? %>
-
- 		<%= link_to "Edit", edit_user_project_path(User.find(element.user_id), Project.find(project.id)) %>
-
-
-<%= link_to "Delete", user_project_path(User.find(element.user_id), Project.find(project.id)), method: :delete  %>
-
 <% end %>
-
-
-
-
-
-
-
-
-
-
-  <br>
-
-
-<% end %> 
-
-
-
-
-
-
-
- 
- <hr />
