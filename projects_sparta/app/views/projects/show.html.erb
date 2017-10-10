@@ -1,0 +1,15 @@
+<h1>Projects#show</h1>
+<p>Find me in app/views/projects/show.html.erb</p>
+
+
+<%= render @project %>
+
+
+<%= form_for(@userproject ) do |f| %>
+
+ <%= f.label :user_id %>
+ <%= f.text_field :user_id %>
+
+
+
+ <% f.submit %>
