@@ -3,7 +3,7 @@ class PublicController < ApplicationController
 
   def index
 
-  @projects=Project.all
+ 
 
   
   end
@@ -13,7 +13,11 @@ class PublicController < ApplicationController
 
 
   def home 
+
  @projects=Project.all
 
   end
+
+
+  
 end
