@@ -15,16 +15,13 @@
  */
 
 
- @import "animate";
-
-
+@import "animate";
 
 @import "bootstrap-sprockets" ;
 @import "bootstrap";
 
 
-html
-{
+html {
     font-size: 100%;
 }
 
@@ -35,14 +32,74 @@ body
 
 .tile
 {
-	height: 200px;
-	width: 300px;
+	height: 300px;
+	width: 200px;
 	display: inline-block;
+	border: solid black;
+	background-color: #00191C;
+	color: white ;
+	text-align: center;
+	margin: 30px;
 
 }
 
 .navbar-custom
 {
 	background-color: #00191C;
+}
+
+
+
+
+
+.body {
+
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+
+.navbar {
+	background-image: url('background-color.png');
+	background-repeat: repeat-x repeat-y
+}
+
+
+
+.logo {
+	background-image: url('logo.svg');
+	width:100px;
+	height:100px;
+	position:relative;
+	
+	background-size:contain;
+	
+	background-repeat: no-repeat
+
+
+}
+
+
+
+
+
+.navbar {
+	position: fixed;
+}
+
+.footer-website {
+	padding: 20px 290px 20px 290px;
+}
+
+.footer-website a {
+	color: white;
+}
+
+.footer-item {
+	padding: 20px 290px 20px 290px;
+}
+
+.footer-item a {
+	color: white;
 }
 

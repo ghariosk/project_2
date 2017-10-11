@@ -1,15 +1,27 @@
 
-<p>Name: <%= user.name %></p>
-<p>Admin: <%= user.admin %></p>
-<p>Avatar: <%= user.avatar %></p>
-<p>Date of Birth: <%= user.dateofbirth %></p>
-<p>Start Date: <%= user.startdate %></p>
-<p>Academy: <%= user.academy %></p>
-<p>Stream: <%= user.stream %></p>
-<p>Language: <%= user.language %></p>
+<p>Name: <%= user.name %>  Admin: <%= user.admin %> </p> <%= link_to "Edit Level", edit_user_path(user) if current_user.admin == true %>
 
-<%= link_to "Show Project", user if action_name == "index" %> ||
-<%= link_to "Edit Project", edit_user_path(user) if action_name == "show" %>
-<%= link_to "New Project", project if action_name == "index" %>
+
+
+
+<p>Avatar: <%= user.avatar %> Date of Birth: <%= user.dateofbirth %>   </p>
+
+<p>Start Date: <%= user.startdate %></p>
+<p>Academy: <%= user.academy %> Start Date: <%= user.startdate %></p>
+
+<p>Language: <%= user.language %> Stream: <%= user.stream %></p>
+
+
+<p> Email <%= user.email %> </p>
+
+
+
+<%= link_to "Show Personnal Project" %>
+
+
+
+
+
+<hr />
 
 

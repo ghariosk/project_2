@@ -15,9 +15,13 @@ class UsersController < ApplicationController
 
 
     else 
+
   	@user=current_user
 
     @userproject=UserProject.where(user_id:current_user.id)
+
+
+    end
   end
 
   def show
@@ -29,6 +33,7 @@ class UsersController < ApplicationController
   def edit
     if 
     @user = User.find(params[:id])
+    end
 
 	end
 
