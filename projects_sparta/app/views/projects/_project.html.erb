@@ -15,42 +15,25 @@
 
 	<p> Participants </p>
 
- 		<%  @a.each_with_index do |element,index| %>
+	<%  @a.each_with_index do |element,index| %>
 
- 			<%= User.find(element.user_id).name  %>
-		<% end %> 
+		<%= User.find(element.user_id).name  %>
+	<% end %> 
 
 
 	<% if not action_name == "home" || "public#show"  %>
 
 
- 		
-
-
  		<%= link_to "Show", user_project_path(current_user, Project.find(project.id ))  %>	
 
 
-  <% elsif action_name == "home" %>
+    <% elsif action_name == "home" %>
 
 
-
-
-
-				 <% link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
-
-		
-
-			
-		
-
-
+		<% link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
 
 
 	<% elsif action_name == "home" || "projects#index" %>
-
-
-
-
 
 	 		<%= link_to "Edit", edit_user_project_path(current_user, Project.find(project.id) ) %>
 
@@ -61,50 +44,13 @@
 			<%= link_to "Show", user_project_path(current_user, Project.find(project.id)) %>
 
 
-
-
-
-
-	
-
-
 	<% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-		
-
-
-	
-
-
-
-
-
 
 
 <br>
 
 
-	<% end %> 
- 	<%= User.find(element.user_id).email %>
-		
-	<% end %>
 
-
-
-	<%= link_to "Show Page", project if action_name == "index" %>
-
-	<%= link_to "Edit Page", edit_project_path(project) %>
 <% end %>
 </div>
 
