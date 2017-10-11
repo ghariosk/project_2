@@ -18,9 +18,13 @@ class ProjectsController < ApplicationController
 
   def new
 
+  
+
     @user=current_user
 
     @project=Project.new
+
+    @user_2=User.new
 
     @userproject=UserProject.new
 
@@ -28,6 +32,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
+
+
       @user=current_user
 
       new_project=Project.create(project_params)
@@ -57,17 +63,67 @@ class ProjectsController < ApplicationController
 
   def edit
 
+
+
     @user=current_user
+
     @project=@user.projects.find(params[:id])
 
-    @userproject=UserProject.find_by(project_id:params[:id])
+
+    @userproject_first=UserProject.all.where(project_id:params[:id])
+
+
+
+    
+
+
+    @userproject_first.each_with_index do |element,index|
+
+      if @userproject_first[index].user_id != current_user.id 
+
+
+
+        @userproject=@userproject_first[index].user_id
+
+        @user_2=User.find(@userproject)
+
+        
+
+       
+
+        @userproject.user_id=@userproject_first[index].user_id
+
+        
+
+      end
+
+    end
+
+
+    
+
+    
 
   end
 
   def update
 
+
+
     @user=current_user
+
+    @userproject=
+
+
     update=@user.projects.find(params[:id]).update(project_params)
+
+
+
+   update_many= 
+
+
+
+
 
     redirect_to user_projects_path
 
@@ -75,6 +131,8 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+
+
 
     @user=current_user 
 
@@ -88,6 +146,12 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:id, :name, :desc, :image, :git, :approved)
+
+  end
+
+  def user_params
+    params.require(:user).permit(:name)
+
   end
 
 end

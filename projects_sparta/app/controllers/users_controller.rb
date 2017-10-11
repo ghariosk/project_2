@@ -2,16 +2,20 @@ class UsersController < ApplicationController
 
 
 
-	  before_action :authenticate_user!
+	 
 
 
 
   def index
-  	@users=Project.all
+  	@user=current_user
+
+    @userproject=UserProject.where(user_id:current_user.id)
+
+    
   end
 
   def show
-  	@user=current_user.find(params[:id])
+  	@user=User.all
   end
 
   def new
