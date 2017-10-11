@@ -15,9 +15,7 @@
  */
 
 
- @import "animate";
-
-
+@import "animate";
 
 @import "bootstrap-sprockets" ;
 @import "bootstrap";
@@ -29,14 +27,21 @@ html {
 
 
 .navbar {
-	position: fixed; 
+	position: fixed;
 }
 
-.nav-website {
-	padding: 20px 20px 20px 20px;
+.footer-website {
+	padding: 20px 290px 20px 290px;
 }
 
-.nav-item {
-	padding: 20px 20px 20px 20px;
+.footer-website a {
+	color: white;
 }
 
+.footer-item {
+	padding: 20px 290px 20px 290px;
+}
+
+.footer-item a {
+	color: white;
+}
