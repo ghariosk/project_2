@@ -8,7 +8,7 @@
 
 
 html {
-    font-size: 80%;
+    font-size: initial
 }
 
 body 
@@ -26,7 +26,11 @@ body
 	background: radial-gradient(#004951, #00373d, #00191C);
 	color: white ;
 	text-align: center;
-	position: relative;
+	overflow: scroll;
+	opacity: 0.8;
+
+
+
 
 }
 
@@ -87,4 +91,11 @@ body
 .fixed-bottom {
 	margin-bottom :0px
 }
+
+.container {
+	
+	margin-left:5px;
+}
+
+
 

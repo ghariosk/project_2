@@ -10,7 +10,14 @@ class UsersController < ApplicationController
 
     if current_user.admin == true
 
-    @user=User.all
+    @users=User.all
+
+
+    
+
+  
+
+   
 
 
 
@@ -20,10 +27,12 @@ class UsersController < ApplicationController
 
     @userproject=UserProject.where(user_id:current_user.id)
 
+    redirect_to root_url
+
 
     end
 
-                                                                                                                         
+                                    
   end
 
   def show
@@ -33,7 +42,7 @@ class UsersController < ApplicationController
 
 
   def edit
-    if current_user.admin == true
+    if 
     @user = User.find(params[:id])
     end
 
@@ -56,7 +65,7 @@ class UsersController < ApplicationController
 
   protected
   def user_params
-    params.require(:user).permit(:admin)
+    params.require(:user).permit(:admin, :id, :name)
   end
 
 end
