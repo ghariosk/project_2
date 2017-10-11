@@ -25,6 +25,58 @@ html {
     font-size: 100%;
 }
 
+body 
+{ 
+	padding-top: 70px; 
+}
+
+.tile
+{
+	height: 200px;
+	width: 300px;
+	display: inline-block;
+
+}
+
+.navbar-custom
+{
+	background-color: #00191C;
+}
+
+
+
+
+
+.body {
+
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+
+.navbar {
+	background-image: url('background-color.png');
+	background-repeat: repeat-x repeat-y
+}
+
+
+
+.logo {
+	background-image: url('logo.svg');
+	width:100px;
+	height:100px;
+	position:relative;
+	
+	background-size:contain;
+	
+	background-repeat: no-repeat
+
+
+}
+
+
+
+
 
 .navbar {
 	position: fixed;

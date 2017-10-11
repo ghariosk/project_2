@@ -19,14 +19,14 @@
 
  
 
- 		<%= User.find(element.user_id).email %>
+ 		<%= User.find(element.user_id).name %>
 
 
- 		<% if index == 0 %>
+ 		<p> Hello </p>
 
 
- 		<%= link_to "Show", user_project_path(User.find(element.user_id), Project.find(project.id)) %>	
-
- 		<% end %>
 
 <% end %>
+
+
+<%= link_to "Show", user_project_path(User.find(element.user_id), Project.find(project.id)) %>	
