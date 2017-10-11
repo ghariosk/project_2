@@ -31,12 +31,6 @@ class ProjectsController < ApplicationController
 
     @collaborator=UserProject.new
 
-
-
-
-
-
-
   end
 
   def create
@@ -134,11 +128,7 @@ class ProjectsController < ApplicationController
 
 
 
-   update_many= 
-
-
-
-
+    
 
     redirect_to user_projects_path
 
