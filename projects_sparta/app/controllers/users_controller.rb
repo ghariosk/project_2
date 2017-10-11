@@ -2,40 +2,53 @@ class UsersController < ApplicationController
 
 
 
-	  before_action :authenticate_user!
+	 
 
 
 
   def index
-  	@users=Project.all
+
+    if current_user.admin == true
+
+    @user=User.all
+
+
+
+    else 
+  	@user=current_user
+
+    @userproject=UserProject.where(user_id:current_user.id)
+
+  end
+
+    
   end
 
   def show
-  	@user=current_user.find(params[:id])
+  	@user=User.find(params[:id])
   end
 
-  def new
-    @user = User.new
-  end
 
-  def create
-  	
-    new_user = User.create(user_params)
-    new_user.save
-	redirect_to new_user
 
-  end
+  def edit
 
-  	def edit
+      if current_user.admin
+
     	@user = User.find(params[:id])
+
+      end
+
+
 	end
 
   def update
 
     user = User.find(params[:id])
+
     user.update(user_params)
 
-    redirect_to user
+    redirect_to users_index_url
+
   end
 
   def destroy
@@ -45,7 +58,7 @@ class UsersController < ApplicationController
 
   protected
   def user_params
-    params.require(:user).permit(:name,:email,)
+    params.require(:user).permit(:admin)
   end
 
 end

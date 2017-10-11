@@ -3,17 +3,25 @@ class PublicController < ApplicationController
 
   def index
 
-  @projects=Project.all
+ 
 
   
   end
 
   def show
+
+  	@project=Project.find(params[:id])
+
+
   end
 
 
   def home 
-  	"HOME"
+
+ @projects=Project.all
 
   end
+
+
+  
 end
