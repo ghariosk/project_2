@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
 
+   before_action :authenticate_user!
 
 
+ if user_signed_in?
 	 
 
 
@@ -11,6 +13,14 @@ class UsersController < ApplicationController
     if current_user.admin == true
 
     @users=User.all
+
+
+
+    @users.each do |element| 
+
+      @task=element
+      
+    end
 
 
     
@@ -67,5 +77,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:admin, :id, :name)
   end
+
+end
 
 end

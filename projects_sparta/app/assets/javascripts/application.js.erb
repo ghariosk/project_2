@@ -13,22 +13,32 @@
 
 
 //= require rails-ujs
-//= require turbolinks
+
+
 //= require_tree .
 //= require popper
 
 //= require jquery3
-//= require bootstrap
-
 
 
 
 $(function () {
 
 
-	$('.check-box').on('click', function () {
+	console.log('hello')
 
-		$('.check-box').submit()
+
+	$('.check-box').each(function () {
+
+		$(this).on('click', function () {
+
+			console.log('check')
+
+			$(this).submit()
+
+	 	})
 
 	})
+
 })
+

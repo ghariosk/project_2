@@ -2,12 +2,18 @@ class ProjectsController < ApplicationController
  
   def index
 
-      @user=current_user
+
+      
+
+    
+
+
+      @user=User.all.find(params[:user_id])
 
 
      
 
-        @projects=current_user.projects
+      @projects=@user.projects
 
 
         
@@ -22,15 +28,15 @@ class ProjectsController < ApplicationController
 
   def show
 
-    @user=current_user
+    @user=User.all.find(params[:user_id])
    
-    @project= current_user.projects.find(params[:id])
+    @project= @user.projects.find(params[:id])
     
   end
 
   def new
 
-    @user=current_user
+    @user=@user=User.all.find(params[:user_id])
 
     @project=Project.new
 
@@ -41,13 +47,13 @@ class ProjectsController < ApplicationController
 
   def create
 
-      @user=current_user
+      @user=User.all.find(params[:user_id])
 
       new_project=Project.create(project_params)
 
     
 
-      @userproject=UserProject.create(project_id: new_project.id, user_id:current_user.id)
+      @userproject=UserProject.create(project_id: new_project.id, user_id:@user.id)
 
       @userproject.save
 
@@ -59,20 +65,25 @@ class ProjectsController < ApplicationController
 
   def edit
 
-    @user=current_user
-    @project=@user.projects.find(params[:id])
-    @userproject_first=UserProject.all.where(project_id:params[:id])
-    @userproject_first.each_with_index do |element,index|
+   @user=User.all.find(params[:user_id])
 
-      if @userproject_first[index].user_id != current_user.id 
-        @userproject=@userproject_first[index].user_id
-        @user_2=User.find(@userproject)
-        @userproject.user_id=@userproject_first[index].user_id
-      end
-    end   
+    @project=@user.projects.find(params[:id])
+
+    # @userproject_first=UserProject.all.where(project_id:params[:id])
+    
+    # @userproject_first.each_with_index do |element,index|
+
+    #   if @userproject_first[index].user_id != current_user.id 
+    #     @userproject=@userproject_first[index].user_id
+    #     @user_2=User.find(@userproject)
+    #     @userproject.user_id=@userproject_first[index].user_id
+    #   end
+    # end   
   end
+
+
   def update
-    @user=current_user
+    @user=User.all.find(params[:user_id])
     update=@user.projects.find(params[:id]).update(project_params)  
     redirect_to user_projects_path
 
@@ -80,7 +91,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @user=current_user 
+    @user=User.all.find(params[:user_id])
 
     @numb
     Project.destroy(params[:id])

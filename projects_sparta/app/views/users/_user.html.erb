@@ -1,10 +1,10 @@
 
-<p> <%= user.name %>    <% if user.admin == true %> | Admin <% end %> 
+<p> <%= user.name %>  <% if user.admin == true %> | Admin <% end %> 
 
-<%= form_for [(user, user.admin)], :html => { :class => 'check-box' } do |f| %>
+<%= form_for @users.find(user.id), :html => { :class => 'check-box' } do |f| %>
 
 <%= f.label :admin, :class => 'check-box' %>
-<%= f.check_box :admin %>
+<%= f.check_box :admin, :class => 'check-box' %>
 
 <% end %>
 

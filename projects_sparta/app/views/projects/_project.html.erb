@@ -1,11 +1,30 @@
-
+<% if project.approved == true || action_name == "index" %>
 <div class="tile">
 
  	<p> Name : <%= project.name %> </p>
  	<p> Description : <%= project.desc %> </p>
    	<p> Image: <%= project.image %> </p>
  	<p> Git : <%= project.git %> </p>
- 	<p> Registered : <%= project.approved %> </p>
+ 	<p> Approved :  
+
+
+ 	<% if action_name == "index" %>
+
+ 	<%= form_for ([@user, @user.projects.find(project.id)]), :html => {:class =>'check-box'} do |f| %>
+
+ 	<%= f.check_box :approved, :class =>'check-box' %>
+
+ 	<% f.submit :class => 'check-box' %>
+
+
+ 	<% end %>
+
+ 	<% end %>
+
+
+ 	</p>
+
+
 
 
 
@@ -33,7 +52,7 @@
 	<% if not action_name == "home" || "public#show"  %>
 
 
- 		<%= link_to "Show", user_project_path(current_user, Project.find(project.id ))  %>	
+ 		<%= link_to "Show", user_project_path(@user, Project.find(project.id ))  %>	
 
 
     <% elsif action_name == "home" %>
@@ -44,19 +63,22 @@
 
 	<% elsif action_name == "home" || "projects#index" %>
 
-	 		<%= link_to "Edit", edit_user_project_path(current_user, Project.find(project.id) ) %>
+	 		<%= link_to "Edit", edit_user_project_path(@user, Project.find(project.id) ) %>
 
 
-			<%= link_to "Delete", user_project_path(current_user, Project.find(project.id)), method: :delete  %>
+			<%= link_to "Delete", user_project_path(@user, Project.find(project.id)), method: :delete  %>
 
 
-			<%= link_to "Show", user_project_path(current_user, Project.find(project.id)) %>
+			<%= link_to "Show", user_project_path(@user, Project.find(project.id)) %>
 
 
 	<% end %>
 
 
 <br>
+
+
+<% end %>
 
 
 

@@ -8,7 +8,8 @@
 
 
 html {
-    font-size: initial
+    font-size: initial;
+    transition: all .3s;
 }
 
 body 
@@ -43,6 +44,7 @@ body
 .body {
 	margin-top: 200px;
 	margin-bottom: 200px;
+
 }
 
 
@@ -84,7 +86,9 @@ body
 .center {
 	
 	margin-top: 70px;
-	margin-bottom:70px
+	margin-bottom:100px;
+	margin-right:20px;
+	margin-left:20px
 }
 
 
@@ -96,6 +100,19 @@ body
 	
 	margin-left:5px;
 }
+
+.email {
+	
+	display:block;
+	height:10px;
+	width:auto;
+	position:relative;
+	margin-top:70px;
+	margin-right:20px;
+	margin-left:20px
+
+}
+
 
 
 
