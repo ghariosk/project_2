@@ -29,7 +29,8 @@ class ProjectsController < ApplicationController
 
     @userproject=UserProject.new
 
-    @collaborator=UserProject.new
+
+    @collab=UserProject.new
 
   end
 
@@ -121,14 +122,10 @@ class ProjectsController < ApplicationController
 
     @user=current_user
 
-    @userproject=
+    
 
 
     update=@user.projects.find(params[:id]).update(project_params)
-
-
-
-    
 
     redirect_to user_projects_path
 
