@@ -36,12 +36,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 # Added by Karl :
-
+# The jquery gem for rails :
 gem 'jquery-rails'
+# Popper gem for rails, add interactive functionality to Bootstrap
 gem 'popper_js', '~> 1.12.3'
-
+# Animate.css gem for rails
 gem 'animate.css-rails', '~> 3.2.0'
-
+# Bootstrap gem for rails 
 gem 'bootstrap-sass', '~> 3.3.6'
 
 
