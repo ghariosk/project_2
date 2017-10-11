@@ -28,12 +28,24 @@ html
     font-size: 100%;
 }
 
+body 
+{ 
+	padding-top: 70px; 
+}
 
-
-.title
+.tile
 {
 	height: 200px;
 	width: 300px;
 	display: inline-block;
+
 }
+
+.navbar-custom
+{
+	background-color: #00191C;
+}
+
+
+
 

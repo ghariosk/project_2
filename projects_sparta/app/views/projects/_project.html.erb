@@ -10,56 +10,40 @@
  	
 	<%  @a.each_with_index do |element,index| %>
 
-<p> Participants </p>
+		<p> Participants </p>
 
- <%  @a.each_with_index do |element,index| %>
-
- 
+ 			<%  @a.each_with_index do |element,index| %>
 
  		<%= User.find(element.user_id).email %>
-
 
  		<% if index == 0 %>
 
 
- 		<%= link_to "Show", user_project_path(User.find(element.user_id), Project.find(project.id)) %>	
+ 			<%= link_to "Show", user_project_path(User.find(element.user_id), Project.find(project.id)) %>	
 
  		<% end %>
+		
+ 		 <% if user_signed_in? %>
+
+ 			<%= link_to "Edit", edit_user_project_path(User.find(element.user_id), Project.find(project.id)) %>
 
 
+			<%= link_to "Delete", user_project_path(User.find(element.user_id), Project.find(project.id)), method: :delete  %>
+
+		<% end %>
+
+  	<br>
+
+
+	<% end %> 
+ 	<%= User.find(element.user_id).email %>
  		
-  <% if user_signed_in? %>
-
- 		<%= link_to "Edit", edit_user_project_path(User.find(element.user_id), Project.find(project.id)) %>
-
-
-<%= link_to "Delete", user_project_path(User.find(element.user_id), Project.find(project.id)), method: :delete  %>
-
 <% end %>
-
-
-
-
-
-
-
-
-
-
-  <br>
-
-
-<% end %> 
-
-
-
-
- 		<%= User.find(element.user_id).email %>
- 		
-	<% end %>
 
 	<%= link_to "Show Page", project if action_name == "index" %> ||
 	<%= link_to "Edit Page", edit_project_path(project) %>
 
 
  <hr />
+<% end %>
+ 
