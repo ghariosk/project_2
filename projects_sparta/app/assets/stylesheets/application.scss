@@ -23,9 +23,20 @@
 @import "bootstrap";
 
 
-html
-{
+html {
     font-size: 100%;
 }
 
+
+.navbar {
+	position: fixed; 
+}
+
+.nav-website {
+	padding: 20px 20px 20px 20px;
+}
+
+.nav-item {
+	padding: 20px 20px 20px 20px;
+}
 
