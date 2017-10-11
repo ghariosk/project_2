@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- 
+
   get 'public/index', to: 'public#index'
 
   get 'public/show'
@@ -7,14 +7,14 @@ Rails.application.routes.draw do
 
   get 'home', to: 'public#home'
 
-devise_for :users
-  resources :users do 
-  	resources :projects
-  end
+  devise_for :users
+#   resources :users do
+#   	resources :projects
+#   end
 
 
 
- resources :projects 
+ resources :projects
 
 
  root 'public#home'
@@ -23,9 +23,8 @@ devise_for :users
 
 
 
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
 end
- 

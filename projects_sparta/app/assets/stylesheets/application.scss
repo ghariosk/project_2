@@ -30,19 +30,21 @@ html
 
 body 
 { 
+	text-align: center;
 	padding-top: 70px; 
 }
 
 .tile
 {
-	height: 300px;
-	width: 200px;
+	height: 350px;
+	width: 350px;
 	display: inline-block;
-	border: solid black;
-	background-color: #00191C;
+	border: solid white;
+	background: radial-gradient(#004951, #00373d, #00191C);
 	color: white ;
 	text-align: center;
-	margin: 30px;
+	margin: 5px;
+	position: relative;
 
 }
 

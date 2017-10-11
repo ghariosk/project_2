@@ -11,15 +11,15 @@
 
 <% if user_signed_in? %>
 
-
-<%=  link_to "New", new_user_project_path(current_user) %>
-
+	<div class="button">
+	<%=  link_to "New", new_user_project_path(current_user) %>
+	</div>
 
 <% elsif %>
 
-
- <%= link_to "New", new_user_session_path %>
-
+	<div class="button">
+ 	<%= link_to "New", new_user_session_path %>
+ 	</div>
 
 
 
