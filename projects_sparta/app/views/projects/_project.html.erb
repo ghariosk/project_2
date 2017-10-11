@@ -1,16 +1,14 @@
 
- <p> Name : <%= project.name %> </p>
- <p> Description : <%= project.desc %> </p>
-   <p> Image: <%= project.image %> </p>
- <p> Git : <%= project.git %> </p>
- <p> Registered : <%= project.approved %> </p>
+<div class="tile">
+<% if project.approved == true %>
+ 	<p> Name : <%= project.name %> </p>
+ 	<p> Description : <%= project.desc %> </p>
+   	<p> Image: <%= project.image %> </p>
+ 	<p> Git : <%= project.git %> </p>
+ 	<p> Registered : <%= project.approved %> </p>
 
-
-
-
-
-  <%  @a = UserProject.all.where(project_id:project.id)   %> 
-
+ 	<p> Email : <%=  @a = UserProject.all.where(project_id:project.id) %> </p>
+ 	
 
 
 
@@ -97,20 +95,20 @@
 <br>
 
 
+	<% end %> 
+ 	<%= User.find(element.user_id).email %>
+		
+	<% end %>
 
 
-
-
-
- 		
- 		
-
-
-
-	
 
 
  <hr />
 
 
+
+	<%= link_to "Show Page", project if action_name == "index" %> ||
+	<%= link_to "Edit Page", edit_project_path(project) %>
+
+</div>
 

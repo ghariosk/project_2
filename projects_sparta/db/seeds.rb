@@ -16,6 +16,10 @@
 
 
 
+  u1 = User.create!(email: "pri@mail.com", password: "password", admin: false)
+  u2 = User.create!(email:"lucy@mail.com", password: "password",admin: true)
+
+
 
 
 
