@@ -10,63 +10,81 @@
  	<p> Email : <%=  @a = UserProject.all.where(project_id:project.id) %> </p>
  	
 
-		<p> Participants </p>
-
- 			<%  @a.each_with_index do |element,index| %>
-
- 		
 
 
 
- 	
+	<p> Participants </p>
 
- 
+ 		<%  @a.each_with_index do |element,index| %>
 
- 
-
-
- 		<%= User.find(element.user_id).name  %>
+ 			<%= User.find(element.user_id).name  %>
+		<% end %> 
 
 
-
-
-
-<% end %> 
-
-
-		<% if not action_name == "home" ||  action_name != "public#show"  %>
+	<% if not action_name == "home" || "public#show"  %>
 
 
  		
 
 
- 		<%= link_to "Show", user_project_path(current_user, Project.find(project.id))  %>	
-
- 		
+ 		<%= link_to "Show", user_project_path(current_user, Project.find(project.id ))  %>	
 
 
- 		
-  	<% if user_signed_in? %>
-
- 		<%= link_to "Edit", edit_user_project_path(current_user, Project.find(project.id) ) %>
+  <% elsif action_name == "home" %>
 
 
-		<%= link_to "Delete", user_project_path(current_user, Project.find(project.id)), method: :delete  %>
 
-	<% end %>
+
+
+				 <% link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
+
+		
+
+			
+		
+
+
+
+
+	<% elsif action_name == "home" || "projects#index" %>
+
+
+
+
+
+	 		<%= link_to "Edit", edit_user_project_path(current_user, Project.find(project.id) ) %>
+
+
+			<%= link_to "Delete", user_project_path(current_user, Project.find(project.id)), method: :delete  %>
+
+
+			<%= link_to "Show", user_project_path(current_user, Project.find(project.id)) %>
+
+
+
+
+
 
 	
 
 
-	<% elsif action_name == "home" %>
+	<% end %>
 
 
-	<%= link_to "Show", public_path %>
+
+
+
+
+
+
+
+
+
 
 		
 
 
-	<% end %>
+	
 
 
 
@@ -86,7 +104,8 @@
 
 
  <hr />
-<% end %>
+
+
 
 	<%= link_to "Show Page", project if action_name == "index" %> ||
 	<%= link_to "Edit Page", edit_project_path(project) %>
