@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+  get 'public/index', to: 'public#index'
+
+
 	 get 'users/index', to: 'users#index'
  
   resources :public
@@ -8,7 +12,7 @@ Rails.application.routes.draw do
   
 
 
-  get 'home', to: 'public#home'
+ get 'home', to: 'public#home'
 
 devise_for :users, :controllers => { registrations: 'registrations'}
 
@@ -18,21 +22,10 @@ devise_for :users, :controllers => { registrations: 'registrations'}
   end
 
 
-
-
-
- resources :projects 
-
-
  root 'public#home' 
 
 
-
-
-
-  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
 end
- 
