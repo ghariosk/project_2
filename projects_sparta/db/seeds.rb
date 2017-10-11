@@ -15,12 +15,15 @@
   p4 = Project.create!(name: "Blog", desc: "A web-based blog application that lets you post everything that you want to talk about !", image: 'url', git: "URL", approved: true)
 
 
+
   u1 = User.create!(email: "pri@mail.com", password: "password", admin: false)
   u2 = User.create!(email:"lucy@mail.com", password: "password",admin: true)
 
 
 
-  UserProject.create!(user_id: u1.id, project_id: p1.id )
-  UserProject.create!(user_id: u1.id, project_id: p2.id )
-  UserProject.create!(user_id: u1.id, project_id: p3.id )
-  UserProject.create!(user_id: u1.id, project_id: p4.id )
+
+
+  UserProject.create!(user_id: 1, project_id: p1.id )
+  UserProject.create!(user_id: 2, project_id: p2.id )
+  UserProject.create!(user_id: 1, project_id: p3.id )
+  UserProject.create!(user_id: 2, project_id: p3.id )

@@ -31,6 +31,49 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+
+ <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.text_field :avatar %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :dateofbirth %><br />
+    <%= f.date_select :dateofbirth %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :startdate %><br />
+    <%= f.date_select :startdate %>
+  </div>
+
+   <div class="field">
+    <%= f.label :academy %><br />
+    <%= f.text_field :academy %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :stream %><br />
+    <%= f.text_field :stream %>
+  </div>
+
+   <div class="field">
+    <%= f.label :language %><br />
+    <%= f.text_field :language %>
+  </div>
+
+
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

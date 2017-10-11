@@ -3,12 +3,19 @@ class PublicController < ApplicationController
 
   def index
 
+  	redirect_to root_url
+
+
+
  
 
   
   end
 
   def show
+
+	@project=Project.find(params[:id])
+
   end
 
 
