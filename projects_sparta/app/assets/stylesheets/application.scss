@@ -49,3 +49,35 @@ body
 
 
 
+
+.body {
+
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+
+.navbar {
+	background-image: url('background-color.png');
+	background-repeat: repeat-x repeat-y
+}
+
+
+
+.logo {
+	background-image: url('logo.svg');
+	width:100px;
+	height:100px;
+	position:relative;
+	
+	background-size:contain;
+	
+	background-repeat: no-repeat
+
+
+}
+
+
+
+
+

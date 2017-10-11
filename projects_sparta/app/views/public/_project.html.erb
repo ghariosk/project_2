@@ -1,4 +1,4 @@
-
+<%= if project.approved == true %>
  <p> Name : <%= project.name %> </p>
  <p> Description : <%= project.desc %> </p>
    <p> Image: <%= project.image %> </p>
@@ -19,10 +19,14 @@
 
  
 
- 		<%= User.find(element.user_id).email %>
+ 		<%= User.find(element.user_id).name %>
+
+ 		<p> Hello </p>
 
 
  		<% if index == 0 %>
+
+
 
 
  		<%= link_to "Show", user_project_path(User.find(element.user_id), Project.find(project.id)) %>	
@@ -30,3 +34,7 @@
  		<% end %>
 
  <% end %>
+
+
+ <% end %>
+

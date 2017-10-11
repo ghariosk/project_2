@@ -1,25 +1,28 @@
-<%= form_for([@user]) do |f| %>
-
-<%= f.label :name %>
-<%= f.text_field :name %>
-
-<%= f.label :email %>
-<%= f.text_field :email %>
-
-<%= f.label :academy %>
-<%= f.text_field :academy %>
+<%= form_for(@user) do |f| %>
 
 
-<% if current_user.admin == true %>
-
-	<%= f.label :approved %>
-	<%= f.check_box :approved %>
 
 
-<% end %>
+
+
+	<%= f.label :admin %>
+
+	<%= f.check_box :admin %>
 
 
 <%= f.submit %>
+
+
+
+
+
+	<br>
+
+
+
+
+
+
 
 
 <% end %>
