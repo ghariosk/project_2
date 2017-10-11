@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
 
   def edit
-    if 
+    if current_user.admin == true
     @user = User.find(params[:id])
     end
 
