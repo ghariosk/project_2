@@ -12,6 +12,8 @@ class PublicController < ApplicationController
 
   	@project=Project.find(params[:id])
 
+  	
+
 
   end
 
