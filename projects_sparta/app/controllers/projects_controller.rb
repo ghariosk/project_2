@@ -21,7 +21,8 @@ class ProjectsController < ApplicationController
 
     @userproject=UserProject.new
 
-    @collaborator=UserProject.new
+
+    @collab=UserProject.new
 
   end
 
@@ -52,30 +53,15 @@ class ProjectsController < ApplicationController
     @userproject_first.each_with_index do |element,index|
 
       if @userproject_first[index].user_id != current_user.id 
-
-
-
         @userproject=@userproject_first[index].user_id
-
         @user_2=User.find(@userproject)
-
         @userproject.user_id=@userproject_first[index].user_id
       end
-
     end   
-
   end
-
   def update
-
-
-
     @user=current_user
-
-    @userproject=
-
     update=@user.projects.find(params[:id]).update(project_params)  
-
     redirect_to user_projects_path
 
 

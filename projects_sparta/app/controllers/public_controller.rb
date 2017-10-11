@@ -9,7 +9,13 @@ class PublicController < ApplicationController
   end
 
   def show
-  end
+
+
+
+
+  	@project=Project.find(params[:id])
+
+ end
 
 
   def home 
