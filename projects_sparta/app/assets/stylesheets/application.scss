@@ -8,7 +8,7 @@
 
 
 html {
-    font-size: 100%;
+    font-size: 80%;
 }
 
 body 
@@ -26,7 +26,6 @@ body
 	background: radial-gradient(#004951, #00373d, #00191C);
 	color: white ;
 	text-align: center;
-	margin: 5px;
 	position: relative;
 
 }
@@ -38,8 +37,8 @@ body
 
 
 .body {
-	margin-top: 70px;
-	margin-bottom: 70px;
+	margin-top: 200px;
+	margin-bottom: 200px;
 }
 
 
@@ -52,7 +51,7 @@ body
 .logo {
 	background-image: url('logo.svg');
 	width:100px;
-	height:100px;
+	height:30px;
 	position:relative;
 	
 	background-size:contain;
@@ -76,5 +75,16 @@ body
 
 .footer-item a {
 	color: white;
+}
+
+.center {
+	
+	margin-top: 70px;
+	margin-bottom:70px
+}
+
+
+.fixed-bottom {
+	margin-bottom :0px
 }
 

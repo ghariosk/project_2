@@ -7,15 +7,22 @@
  	<p> Git : <%= project.git %> </p>
  	<p> Registered : <%= project.approved %> </p>
 
- 	<p> Email : <%=  @a = UserProject.all.where(project_id:project.id) %> </p>
+
+
  	
 
-
+	<p> <%  @a = UserProject.all.where(project_id:project.id) %> </p>
 
 
 	<p> Participants </p>
 
 	<%  @a.each_with_index do |element,index| %>
+
+
+	<%= User.find(element.user_id).email %>
+
+
+ 	
 
 
 		<%= User.find(element.user_id).name  %>
