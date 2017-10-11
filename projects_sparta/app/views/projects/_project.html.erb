@@ -1,4 +1,4 @@
-
+<div class="tile">
 <% if project.approved == true %>
  	<p> Name : <%= project.name %> </p>
  	<p> Description : <%= project.desc %> </p>
@@ -37,13 +37,16 @@
 
 	<% end %> 
  	<%= User.find(element.user_id).email %>
- 		
+		
+	<% end %>
+
+
+
+
+ <hr />
 <% end %>
 
 	<%= link_to "Show Page", project if action_name == "index" %> ||
 	<%= link_to "Edit Page", edit_project_path(project) %>
 
-
- <hr />
-<% end %>
- 
+</div>

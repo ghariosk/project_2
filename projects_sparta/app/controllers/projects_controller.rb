@@ -3,7 +3,6 @@ class ProjectsController < ApplicationController
   def index
       @projects=current_user.projects
 
-
   end
 
   def show
@@ -12,20 +11,13 @@ class ProjectsController < ApplicationController
    
     @project= current_user.projects.find(params[:id])
     
-
-
   end
 
   def new
 
-  
-
     @user=current_user
 
-
     @project=Project.new
-
-    
 
     @userproject=UserProject.new
 
@@ -34,7 +26,6 @@ class ProjectsController < ApplicationController
   end
 
   def create
-
 
       @user=current_user
 
@@ -46,46 +37,18 @@ class ProjectsController < ApplicationController
 
       @userproject.save
 
-
-
-   
-
-     
-
-    
-
       @collaborator=UserProject.create!(project_id:new_project.id, user_id:params[:user_id])
 
       @collaborator.save
-
-
-
-     
-
-
-
-      
-
 
       redirect_to user_projects_path
   end
 
   def edit
 
-
-
     @user=current_user
-
     @project=@user.projects.find(params[:id])
-
-
     @userproject_first=UserProject.all.where(project_id:params[:id])
-
-
-
-    
-
-
     @userproject_first.each_with_index do |element,index|
 
       if @userproject_first[index].user_id != current_user.id 
@@ -96,22 +59,10 @@ class ProjectsController < ApplicationController
 
         @user_2=User.find(@userproject)
 
-        
-
-       
-
         @userproject.user_id=@userproject_first[index].user_id
-
-        
-
       end
 
-    end
-
-
-    
-
-    
+    end   
 
   end
 
@@ -123,12 +74,7 @@ class ProjectsController < ApplicationController
 
     @userproject=
 
-
-    update=@user.projects.find(params[:id]).update(project_params)
-
-
-
-    
+    update=@user.projects.find(params[:id]).update(project_params)  
 
     redirect_to user_projects_path
 
@@ -136,9 +82,6 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-
-
-
     @user=current_user 
 
     @numb
