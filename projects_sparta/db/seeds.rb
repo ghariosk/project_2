@@ -15,7 +15,8 @@
   p4 = Project.create!(name: "Blog", desc: "A web-based blog application that lets you post everything that you want to talk about !", image: 'url', git: "URL", approved: true)
 
 
-  u1 = User.create!(email: "pri-8@hotmail.co.uk", password: "beloved")
+  u1 = User.create!(email: "pri@mail.com", password: "password", admin: false)
+  u2 = User.create!(email:"lucy@mail.com", password: "password",admin: true)
 
 
 
