@@ -53,25 +53,27 @@
         <br>
         <br>
    
-        <% if user_signed_in? %>
+        <% if user_signed_in?  %>
 
 
         <li class="nav-item">
 
-        	<%= link_to "Personal Projects", user_projects_path(current_user), :class => "nav-link active" %>
+        	 <%= link_to "Personal Projects", user_projects_path(current_user), :class => "nav-link active" %>
 
 
-          </li>
+        </li>
+
+          <% if current_user.admin == true %>
+            <li class="nav-item">
+
+             <a class="nav-link btn" href="/users">User base</a>
 
 
-          <li class="nav-item">
+            </li>
 
-           <a class="nav-link btn" href="/users">User base</a>
+          <% end %>
 
-
-          </li>
-
-        	<% end %>
+        <% end %>
 
           
 
