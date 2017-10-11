@@ -32,12 +32,6 @@ class ProjectsController < ApplicationController
 
     @collab=UserProject.new
 
-
-
-
-
-
-
   end
 
   def create
@@ -132,13 +126,6 @@ class ProjectsController < ApplicationController
 
 
     update=@user.projects.find(params[:id]).update(project_params)
-
-
-
-  
-
-
-
 
     redirect_to user_projects_path
 
