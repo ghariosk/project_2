@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
+
+	 get 'users/index', to: 'users#index'
  
-  get 'public/index', to: 'public#index'
-
-  get 'public/:id', to: 'public#show'
-
+  resources :public
   
-  get 'users/index', to: 'users#index'
+ 
   
 
 
@@ -25,7 +24,7 @@ devise_for :users, :controllers => { registrations: 'registrations'}
  resources :projects 
 
 
- root 'public#home'
+ root 'public#home' 
 
 
 
