@@ -21,12 +21,12 @@ html {
 }
 
 
-body {
+body 
+{ 
 	background-image: url("https://www.spartaglobal.com/img/media-hub-bg.jpg");
 	background-repeat: repeat-y;
-	padding-top: 70px;
-	padding-bottom: 70px;	
-  text-align: center;
+	text-align: center;
+
 }
 
 .tile
@@ -48,9 +48,10 @@ body {
 	background-color: #00191C;
 }
 
+
 .body {
-	margin-right: 30px;
-	margin-left: 30px;
+	margin-top: 70px;
+	margin-bottom: 70px;
 }
 
 .navbar {
@@ -65,11 +66,6 @@ body {
 	position:relative;
 	background-size:contain;
 	background-repeat: no-repeat;
-}
-
-.footbar {
-	position: fixed;
-	padding: 0;
 }
 
 .footer-website {
@@ -87,3 +83,4 @@ body {
 .footer-item a {
 	color: white;
 }
+
