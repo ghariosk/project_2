@@ -1,7 +1,22 @@
 class ProjectsController < ApplicationController
  
   def index
-      @projects=current_user.projects
+
+      @user=current_user
+
+
+     
+
+        @projects=current_user.projects
+
+
+        
+         
+
+
+   
+
+
 
   end
 
