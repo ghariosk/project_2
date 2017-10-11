@@ -10,42 +10,31 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
-
  */
 
-
 @import "animate";
-
 @import "bootstrap-sprockets" ;
 @import "bootstrap";
-
 
 html {
     font-size: 100%;
 }
 
-body 
-{ 
+body {
+	background-image: url("");
+	background-repeat: repeat-y; 
 	padding-top: 70px; 
 }
 
-.tile
-{
+.tile {
 	height: 200px;
 	width: 300px;
 	display: inline-block;
-
 }
 
-.navbar-custom
-{
+.navbar-custom {
 	background-color: #00191C;
 }
-
-
-
-
 
 .body {
 
@@ -53,30 +42,19 @@ body
 	margin-left: 30px;
 }
 
-
 .navbar {
 	background-image: url('background-color.png');
 	background-repeat: repeat-x repeat-y
 }
-
-
 
 .logo {
 	background-image: url('logo.svg');
 	width:100px;
 	height:100px;
 	position:relative;
-	
 	background-size:contain;
-	
-	background-repeat: no-repeat
-
-
+	background-repeat: no-repeat;
 }
-
-
-
-
 
 .navbar {
 	position: fixed;
