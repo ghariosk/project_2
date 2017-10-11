@@ -22,11 +22,19 @@ class ProjectsController < ApplicationController
 
     @user=current_user
 
+
     @project=Project.new
 
-    @user_2=User.new
+    
 
     @userproject=UserProject.new
+
+    @collaborator=UserProject.new
+
+
+
+
+
 
 
   end
@@ -40,14 +48,21 @@ class ProjectsController < ApplicationController
 
       new_project.save
 
-      new_user_project=UserProject.create(project_id: new_project.id, user_id:current_user.id)
+      @userproject=UserProject.create(project_id: new_project.id, user_id:current_user.id)
 
-      @new_user_project_2=UserProject.new
+      @userproject.save
 
-      @new_user_project_2.project_id=new_project.id
-      @new_user_project_2.user_id=params[:user_id]
 
-      @new_user_project_2.save
+
+   
+
+     
+
+    
+
+      @collaborator=UserProject.create!(project_id:new_project.id, user_id:params[:user_id])
+
+      @collaborator.save
 
 
 
