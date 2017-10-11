@@ -15,16 +15,13 @@
  */
 
 
- @import "animate";
-
-
+@import "animate";
 
 @import "bootstrap-sprockets" ;
 @import "bootstrap";
 
 
-html
-{
+html {
     font-size: 100%;
 }
 
@@ -81,3 +78,22 @@ body
 
 
 
+.navbar {
+	position: fixed;
+}
+
+.footer-website {
+	padding: 20px 290px 20px 290px;
+}
+
+.footer-website a {
+	color: white;
+}
+
+.footer-item {
+	padding: 20px 290px 20px 290px;
+}
+
+.footer-item a {
+	color: white;
+}
