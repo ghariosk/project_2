@@ -13,7 +13,7 @@
  */
 
 @import "animate";
-@import "bootstrap-sprockets" ;
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 html {
@@ -21,9 +21,10 @@ html {
 }
 
 body {
-	background-image: url("");
-	background-repeat: repeat-y; 
-	padding-top: 70px; 
+	background-image: url("https://www.spartaglobal.com/img/media-hub-bg.jpg");
+	background-repeat: repeat-y;
+	padding-top: 70px;
+	padding-bottom: 70px;
 }
 
 .tile {
@@ -37,7 +38,6 @@ body {
 }
 
 .body {
-
 	margin-right: 30px;
 	margin-left: 30px;
 }
@@ -56,8 +56,9 @@ body {
 	background-repeat: no-repeat;
 }
 
-.navbar {
+.footbar {
 	position: fixed;
+	padding: 0;
 }
 
 .footer-website {
