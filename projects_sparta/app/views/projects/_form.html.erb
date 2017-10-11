@@ -14,9 +14,10 @@
 
 
 
-
-	<%= f.label :approved %>
-	<%= f.check_box :approved %>
+	<% if current_user.admin == true %>
+		<%= f.label :approved %>
+		<%= f.check_box :approved %>
+	<% end %>
 
 
 

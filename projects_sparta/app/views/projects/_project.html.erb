@@ -5,10 +5,12 @@
  	<p> Description : <%= project.desc %> </p>
    	<p> Image: <%= project.image %> </p>
  	<p> Git : <%= project.git %> </p>
+ 	
+
+
+ 	<% if action_name == "index" && current_user.admin == true %>
+
  	<p> Approved :  
-
-
- 	<% if action_name == "index" %>
 
  	<%= form_for ([@user, @user.projects.find(project.id)]), :html => {:class =>'check-box'} do |f| %>
 
