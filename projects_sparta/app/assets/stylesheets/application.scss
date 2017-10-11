@@ -10,76 +10,49 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
-
  */
 
-
 @import "animate";
-
-@import "bootstrap-sprockets" ;
+@import "bootstrap-sprockets";
 @import "bootstrap";
-
 
 html {
     font-size: 100%;
 }
 
-body 
-{ 
-	padding-top: 70px; 
+body {
+	background-image: url("https://www.spartaglobal.com/img/media-hub-bg.jpg");
+	background-repeat: repeat-y;
+	padding-top: 70px;
+	padding-bottom: 70px;
 }
 
-.tile
-{
-	height: 200px;
-	width: 300px;
-	display: inline-block;
-
-}
-
-.navbar-custom
-{
+.navbar-custom {
 	background-color: #00191C;
 }
 
-
-
-
-
 .body {
-
 	margin-right: 30px;
 	margin-left: 30px;
 }
-
 
 .navbar {
 	background-image: url('background-color.png');
 	background-repeat: repeat-x repeat-y
 }
 
-
-
 .logo {
 	background-image: url('logo.svg');
 	width:100px;
 	height:100px;
 	position:relative;
-	
 	background-size:contain;
-	
-	background-repeat: no-repeat
-
-
+	background-repeat: no-repeat;
 }
 
-
-
-
-
-.navbar {
+.footbar {
 	position: fixed;
+	padding: 0;
 }
 
 .footer-website {
