@@ -16,16 +16,16 @@ ActiveRecord::Schema.define(version: 20171010112250) do
   enable_extension "plpgsql"
 
   create_table "projects", force: :cascade do |t|
-    t.string "name"
-    t.string "desc"
-    t.string "image"
+    t.string "name"     ### different attributes for each project
+    t.string "desc"        ### name,description,image, git address for project so we can put it on the project show page
+    t.string "image"        
     t.string "git"
-    t.boolean "approved"
+    t.boolean "approved"        #### boolean for whether approved by admin
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "language"
+    t.string "language"         ### languages used by projects ready to add to it
     t.string "showpage"
-    t.datetime "startdate"
+    t.datetime "startdate"      
   end
 
   create_table "user_projects", force: :cascade do |t|
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20171010112250) do
     t.string "name"
     t.boolean "admin"
     t.string "avatar"
-    t.datetime "dateofbirth"
+    t.datetime "dateofbirth"        #### details about the users 
     t.datetime "startdate"
     t.string "academy"
     t.string "stream"

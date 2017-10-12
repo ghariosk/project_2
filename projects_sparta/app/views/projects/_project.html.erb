@@ -1,6 +1,7 @@
 <%# A div will store all information about a project in a tile which will be rendered to the page. %>
 <div class="tile">
 
+
 <%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
 <p> Name : <%= project.name %> </p>
 <p> Description : <%= project.desc %> </p>
@@ -8,6 +9,8 @@
 <p> Git : <%= project.git %> </p>
 <p> Registered : <%= project.approved %> </p>
 
+
+ 
 <%# An email address is used with project_id to render matching projects. %>
 <p> Email : <%=  @a = UserProject.all.where(project_id:project.id) %> </p>
 	
@@ -18,7 +21,7 @@
 	<%= User.find(element.user_id).name  %>
 <% end %> 
 
-<%# This loop directs users to particular paths. %>
+<%# This if statement  directs users to particular paths. %>
 <% if not action_name == "home" || "public#show"  %>
 
 		<%# This link will direct users to a page which will display their project. %>

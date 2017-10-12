@@ -17,36 +17,37 @@
 @import "bootstrap";
 
 html {
-    font-size: 100%;
+    font-size: 100%;  /////to make sure we have 
 }
 
 
 body 
 { 
-	background-image: url("https://www.spartaglobal.com/img/media-hub-bg.jpg");
+
+	background-image: url("https://www.spartaglobal.com/img/media-hub-bg.jpg"); ///// so logo
 	background-repeat: repeat-y;
-	text-align: center;
+	text-align: center; 		//// so text and div are central
+	margin-top: 70px;			//// gap at top for nav bar
+	margin-bottom: 70px;		//// gap at bottom for footer bar
 
 }
 
 .tile
 {
-	height: 350px;
+	height: 350px;				///// size for tiles
 	width: 350px;
-	display: inline-block;
-	border: solid white;
-	background: radial-gradient(#004951, #00373d, #00191C);
-	color: white ;
-	text-align: center;
-	margin: 5px;
-	position: relative;
+	display: inline-block;		//// how to have them sitting next to one another
+	border: solid grey;			//// grey border so we can have more styling
+	background: radial-gradient(#004951, #00373d, #00191C); /// some styling for the tiles
+	color: white ;		/// text color
+	text-align: center;		///// have text central
+	margin: 5px;			///// have a little border between tiles
+	position: relative;		///// to have them in a line
+	overflow:  scroll; /// so tiles are in line
 
 
 }
 
-.navbar-custom {
-	background-color: #00191C;
-}
 
 
 .body {
@@ -59,28 +60,33 @@ body
 	background-repeat: repeat-x repeat-y
 }
 
+.navbar-custom
+{
+	background-color: #00191C; //// to have the nav bar the same colour as the one on sparta global
+	margin: auto;		////no spacing between the edge of the screen and nav bars
+
+}
+
 .logo {
-	background-image: url('logo.svg');
-	width:100px;
-	height:100px;
-	position:relative;
+	background-image: url('logo.svg');  /// logo for nav bar of sparta global
+	width:100px;			//// size
+	height:30px;		
+	position:relative;			/// to have it at the front on the bar
 	background-size:contain;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat; /// dont want any repeating 
+
 }
 
-.footer-website {
-	padding: 20px 290px 20px 290px;
-}
-
-.footer-website a {
-	color: white;
-}
 
 .footer-item {
-	padding: 20px 290px 20px 290px;
+	padding: 20px 290px 20px 290px;     //// so the buttons on the bottom nav bar are central
 }
 
 .footer-item a {
-	color: white;
+	color: white;			///// so text is white
 }
 
+.center {
+	margin-top:70px;			//// so the div also have a little border on top and bottom
+	margin-bottom:70px;
+}
