@@ -4,7 +4,9 @@
 <%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
  	<p> Name : <%= project.name %> </p>
  	<p> Description : <%= project.desc %> </p>
-   	<p> Image: <%= project.image %> </p>
+   	<div class='image'>
+   		<%= image_tag project.image %>
+   	</div>
  	<p> Git : <%= project.git %> </p>
  	
 
@@ -58,7 +60,8 @@
 	
 
 
-
+<br>
+<br>
 
 
 
@@ -98,8 +101,5 @@
 
 
 <br>
-
-
 </div>
-
 <% end %>
