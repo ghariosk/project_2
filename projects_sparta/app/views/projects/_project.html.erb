@@ -1,5 +1,8 @@
 <% if project.approved == true || action_name == "index" || action_name == "show" %>
-	<div class="tile" #background-image="<%= project.image %> ">
+	<div class="tile" style="background-image:url('<%= project.image %>')">
+
+
+
 
 		<div class="text">
 
@@ -7,8 +10,9 @@
 		<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
 		 	<p> <%= project.name %> </p>
 		 	<p> <%= project.desc %> </p>
-		   	<%= project.image %> 
-		 	<p> Git : <%= project.git %> </p>
+		   
+		 	<a href='<%=project.git%>'> <%= image_tag("github.png") %> </a>
+
 		 	<% if action_name == "index" && current_user.admin == true %>
 				<p> Approved :  
 				<%= form_for ([@user, @user.projects.find(project.id)]), :html => {:class =>'check-box'} do |f| %>

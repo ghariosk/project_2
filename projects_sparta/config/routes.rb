@@ -10,3 +10,5 @@ Rails.application.routes.draw do
   	end
 	root 'public#home' # sets the root url to home
 end
+
+
