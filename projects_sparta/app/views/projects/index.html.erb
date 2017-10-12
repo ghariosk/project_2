@@ -1,17 +1,12 @@
 <%# Projects are rendered to the index page. %>
 <h1>Projects</h1>
-
 <hr />
-
 <%= render @projects %>
-
 <%# If a user has signed in they can create a new project. %>
 <% if user_signed_in? %>
-
 	<div class="button">
 	<%=  link_to "New", new_user_project_path(current_user) %>
 	</div>
-
 <% end %>
 
 

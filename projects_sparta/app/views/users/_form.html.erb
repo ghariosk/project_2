@@ -1,10 +1,7 @@
 <%# This form will determine if a user is an admin or not. %>
 <%= form_for(@user) do |f| %>
-
 	<%= f.label :admin %>
 	<%= f.check_box :admin %>
-
 <%# A submit button will render the form to the webpage. %>
 <%= f.submit %>
-
 <% end %>
