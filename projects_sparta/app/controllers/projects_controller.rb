@@ -1,103 +1,54 @@
 class ProjectsController < ApplicationController
- 
   def index
-
-      @user=current_user
-
-
-     
-
-        @projects=current_user.projects
-
-
-        
-         
-
-
-   
-
-
-
+    @user=User.all.find(params[:user_id]) # sets the index page of the projects to yield a list of all the projects assigned to the user's id
+    @projects=@user.projects
   end
 
   def show
-
-    @user=current_user
-   
-    @project= current_user.projects.find(params[:id])
-    
+    @user=User.all.find(params[:user_id]) # sets the show page of the projects to display the project associated to the user and id
+    @project= @user.projects.find(params[:id])
   end
 
   def new
-
-    @user=current_user
-
+    @user=@user=User.all.find(params[:user_id]) # create a new database entry for a project and of USerProject, linking the user to the project
     @project=Project.new
-
     @userproject=UserProject.new
-
-
   end
 
   def create
-
-      @user=current_user
-
-      new_project=Project.create(project_params)
-
-    
-
-      @userproject=UserProject.create(project_id: new_project.id, user_id:current_user.id)
-
-      @userproject.save
-
-    
-
-
-      redirect_to user_projects_path
+    @user=User.all.find(params[:user_id]) # hydrate the data into the newly created databse of project and userproject
+    new_project=Project.create(project_params)
+    @userproject=UserProject.create(project_id: new_project.id, user_id:@user.id)
+    @userproject.save
+    redirect_to user_projects_path
   end
 
   def edit
-
-    @user=current_user
+    @user=User.all.find(params[:user_id]) # extract the data from the user and project database to edit
     @project=@user.projects.find(params[:id])
-    @userproject_first=UserProject.all.where(project_id:params[:id])
-    @userproject_first.each_with_index do |element,index|
-
-      if @userproject_first[index].user_id != current_user.id 
-        @userproject=@userproject_first[index].user_id
-        @user_2=User.find(@userproject)
-        @userproject.user_id=@userproject_first[index].user_id
-      end
-    end   
   end
+
+
   def update
-    @user=current_user
+    @user=User.all.find(params[:user_id]) #  update the database with the new entries
     update=@user.projects.find(params[:id]).update(project_params)  
     redirect_to user_projects_path
-
-
   end
 
   def destroy
-    @user=current_user 
-
-    @numb
+    @user=User.all.find(params[:user_id]) # deletes the database entry associated with the :id
     Project.destroy(params[:id])
-
     redirect_to user_projects_path
   end
 
   protected
 
   def project_params
-    params.require(:project).permit(:id, :name, :desc, :image, :git, :approved)
-
+    params.require(:project).permit(:id, :name, :desc, :image, :git, :approved) # permits the exchanges of data between the controller 
+                                                                                # and the database
   end
 
   def user_params
     params.require(:user).permit(:name)
-
   end
-
 end
