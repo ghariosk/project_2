@@ -74,7 +74,7 @@
 <% elsif action_name == "home" %>
 
 	<%# This link will direct users to a show page of a requested project. %>
-	<% link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
+	<%= link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
 
 
 	<% elsif action_name == "home" || action_name == "index" %>
@@ -86,9 +86,6 @@
 
 
 
-
-	
-	
 
 		  <%# This link will delete a user's project from the application. %>
 			<%= link_to "Delete", user_project_path(@user, Project.find(project.id)), method: :delete  %>
@@ -103,12 +100,6 @@
 <br>
 
 
-<% end %>
-
-
-
-
-
-
 </div>
 
+<% end %>
