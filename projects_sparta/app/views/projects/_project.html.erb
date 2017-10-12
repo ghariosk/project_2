@@ -1,4 +1,4 @@
-<% if project.approved == true || action_name == "index" %>
+<% if project.approved == true || action_name == "index" || action_name == "show" %>
 <div class="tile">
 
  	<p> Name : <%= project.name %> </p>
@@ -63,7 +63,7 @@
 		<% link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
 
 
-	<% elsif action_name == "home" || "projects#index" %>
+	<% elsif action_name == "home" || action_name == "index" %>
 
 	 		<%= link_to "Edit", edit_user_project_path(@user, Project.find(project.id) ) %>
 
