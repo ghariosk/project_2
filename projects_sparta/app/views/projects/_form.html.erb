@@ -13,15 +13,19 @@
 <%= f.label :image %>
 <%= f.text_field :image %>
 
-
-<%# A label and text field stores a project's github url. %>
-
 <%= f.label :git %>
 <%= f.text_field :git %>
 
-	<%# A label and text field creates a checkbox that will approve projects. %>
-	<%= f.label :approved %>
-	<%= f.check_box :approved %>
+
+<%# A label and text field stores a project's github url. %>
+
+
+	<% if current_user.admin == true %>
+      <%# A label and text field creates a checkbox that will approve projects. %>
+      <%= f.label :approved %>
+      <%= f.check_box :approved %>
+  	<% end %>                           
+
 
 <%# A submit button will render the form to the webpage. %>
 <%= f.submit :class => "submit" %>

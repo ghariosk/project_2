@@ -99,3 +99,9 @@ pickle-email-*.html
 *.old
 *.jar
 xerial*.*
+
+
+# Email information :
+
+.env
+Procfile 
