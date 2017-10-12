@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user! # limits the accessibility to signed in users only
-  if user_signed_in? 
+  # limits the accessibility to signed in users only
+
+     before_action :authenticate_user!
     def index
       if current_user.admin == true # show a list of all users registered if the current user is an admin
         @users=User.all 
@@ -8,8 +9,8 @@ class UsersController < ApplicationController
          @task=element
         end
       else 
-        @user=current_user. # or else sho a list of the user's personal page . not very relevant here as current_user required
-        @userproject=UserProject.where(user_id:current_user.id)
+        @user=current_user # or else sho a list of the user's personal page . not very relevant here as current_user required
+        @userproject=UserProject.where(user_id: current_user.id)
         redirect_to root_url
       end
     end
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
     def update 
       user = User.find(params[:id])
       user.update(user_params)
-      edirect_to users_index_url
+      redirect_to users_index_url
     end
      def destroy
       User.destroy(params[:id])
@@ -34,5 +35,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:admin, :id, :name)
     end
-end
+
 end
