@@ -1,29 +1,28 @@
+<%# This form enables a user to store information about a project. %>
 <%= form_for([@user,@project]) do |f| %>
 
+<%# A label and text field stores the project's name. %>
 <%= f.label :name %>
 <%= f.text_field :name %>
 
+<%# A label and text field stores the project's description. %>
 <%= f.label :desc %>
 <%= f.text_field :desc %>
 
+<%# A label and text field stores an image url. %>
 <%= f.label :image %>
 <%= f.text_field :image %>
 
+<%# A label and text field stores a project's github url. %>
 <%= f.label :git %>
 <%= f.text_field :git %>
 
-
-
-
+	<%# A label and text field creates a checkbox that will approve projects. %>
 	<%= f.label :approved %>
 	<%= f.check_box :approved %>
 
-
-
-
-
+<%# A submit button will render the form to the webpage. %>
 <%= f.submit :class => "submit" %>
-
 
 <% end %>
 

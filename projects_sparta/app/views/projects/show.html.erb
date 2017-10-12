@@ -1,15 +1,10 @@
+<%# A particular project will be rendered to the show page. %>
 <h1>Projects#show</h1>
 <p>Find me in app/views/projects/show.html.erb</p>
 
+<%= render @project %>
 
-	<%= render @project %>
-
-	
-
+<%# Users can go back to the homepage %>
 <div class="button">
-
 	<%= link_to "Back", user_projects_path %>
-
 </div>
-
-
