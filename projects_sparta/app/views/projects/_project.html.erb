@@ -1,5 +1,6 @@
 
 <% if project.approved == true || action_name == "index" || action_name == "show" %>
+
 	<div class="tile">
 		<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
 		 	<p> Name : <%= project.name %> </p>
@@ -34,9 +35,11 @@
 		    <%# This link will direct users to an edit form where they can edit information about their projects. %>
 			<%= link_to "Edit", edit_user_project_path(@user, Project.find(project.id) ) %>
 			<%# This link will delete a user's project from the application. %>
+
 			<%= link_to "Delete", user_project_path(@user, Project.find(project.id)), method: :delete  %>
 			<%= link_to "Show", user_project_path(@user, Project.find(project.id)) %>
-		<% end %>
+<% end %>
 		<br>
 	</div>
+
 <% end %>
