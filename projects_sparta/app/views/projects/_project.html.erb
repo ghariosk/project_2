@@ -4,7 +4,9 @@
 <%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
  	<p> Name : <%= project.name %> </p>
  	<p> Description : <%= project.desc %> </p>
-   	<p> Image: <%= project.image %> </p>
+   	<div class='image'>
+   		<%= image_tag project.image %>
+   	</div>
  	<p> Git : <%= project.git %> </p>
  	
 
@@ -58,7 +60,8 @@
 	
 
 
-
+<br>
+<br>
 
 
 
@@ -74,7 +77,7 @@
 <% elsif action_name == "home" %>
 
 	<%# This link will direct users to a show page of a requested project. %>
-	<% link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
+	<%= link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
 
 
 	<% elsif action_name == "home" || action_name == "index" %>
@@ -102,7 +105,7 @@
 
 <br>
 
-
+</div>
 <% end %>
 
 
@@ -110,5 +113,5 @@
 
 
 
-</div>
+
 
