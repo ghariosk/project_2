@@ -23,22 +23,19 @@
 
 
 $(function () {
-
-
-	console.log('hello')
-
-
 	$('.check-box').each(function () {
-
 		$(this).on('click', function () {
-
 			console.log('check')
-
 			$(this).submit()
-
-	 	})
-
+		})
 	})
 
+	$('.tile').hover(function () {
+		$(this).children().fadeIn(300)
+	})
+
+	$('.tile').mouseleave(function () {
+		$(this).children().fadeOut(300)
+	})
 })
 
