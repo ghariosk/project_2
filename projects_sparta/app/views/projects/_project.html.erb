@@ -5,7 +5,9 @@
 		<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
 		 	<p> Name : <%= project.name %> </p>
 		 	<p> Description : <%= project.desc %> </p>
-		   	<p> Image: <%= project.image %> </p>
+		   	<div class="image">
+		   		<%= image_tag project.image %>
+		   	</div>	
 		 	<p> Git : <%= project.git %> </p>
 		 	<% if action_name == "index" && current_user.admin == true %>
 				<p> Approved :  
@@ -24,6 +26,7 @@
 				<%# Finds user email from User to render with projects. %>
 				<%= User.find(element.user_id).name  %>
 		  	<% end %> 
+		  	<br>
 		<%# This if statement  directs users to particular paths. %>
 		<% if not action_name == "home" || "public#show"  %>
 			<%# This link will direct users to a page which will display their project. %>
