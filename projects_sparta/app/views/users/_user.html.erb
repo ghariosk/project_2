@@ -1,27 +1,16 @@
-
+<%# Fields store information about a user, including name, avatar, date of birth, start date, academy, stream, programming language, email address and if a user is an admin user. %>
 <p>Name: <%= user.name %>  Admin: <%= user.admin %> </p> <%= link_to "Edit Level", edit_user_path(user) if current_user.admin == true %>
-
-
-
-
 <p>Avatar: <%= user.avatar %> Date of Birth: <%= user.dateofbirth %>   </p>
-
 <p>Start Date: <%= user.startdate %></p>
 <p>Academy: <%= user.academy %> Start Date: <%= user.startdate %></p>
-
 <p>Language: <%= user.language %> Stream: <%= user.stream %></p>
-
 
 <p> Email <%= user.email %> </p>
 
+<%# This link will display a users personal project. %>
+<%= link_to "Show Personal Project" %>
 
+<%# This link will enable projects to be approved. %>
+<%= link_to "Approval", edit_user_path(user) %> 
 
-<%= link_to "Show Personnal Project" %>
-
-
-
-
-
-<hr />
-
-
+<hr/>

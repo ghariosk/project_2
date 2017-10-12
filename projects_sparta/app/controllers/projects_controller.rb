@@ -37,8 +37,6 @@ class ProjectsController < ApplicationController
     @userproject=UserProject.new
 
 
-    @collab=UserProject.new
-
   end
 
   def create
@@ -47,15 +45,14 @@ class ProjectsController < ApplicationController
 
       new_project=Project.create(project_params)
 
-      new_project.save
+    
 
       @userproject=UserProject.create(project_id: new_project.id, user_id:current_user.id)
 
       @userproject.save
 
-      @collaborator=UserProject.create!(project_id:new_project.id, user_id:params[:user_id])
+    
 
-      @collaborator.save
 
       redirect_to user_projects_path
   end
