@@ -1,44 +1,58 @@
-
-
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
 
 @import "animate";
-
-@import "bootstrap-sprockets" ;
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 html {
-    font-size: initial;
+
+   
     transition: all .3s;
+    font-size: 100%;  /////to make sure we have 
+
 }
+
 
 body 
 { 
-	text-align: center;
+
+	background-image: url("https://www.spartaglobal.com/img/media-hub-bg.jpg"); ///// so logo
+	background-repeat: repeat-y;
+	text-align: center; 		//// so text and div are central
+	margin-top: 70px;			//// gap at top for nav bar
+	margin-bottom: 70px;		//// gap at bottom for footer bar
 
 }
 
 .tile
 {
-	height: 350px;
+	height: 350px;				///// size for tiles
 	width: 350px;
-	display: inline-block;
-	border: solid white;
-	background: radial-gradient(#004951, #00373d, #00191C);
-	color: white ;
-	text-align: center;
-	overflow: scroll;
-	opacity: 0.8;
 
-
+	display: inline-block;		//// how to have them sitting next to one another
+	border: solid grey;			//// grey border so we can have more styling
+	background: radial-gradient(#004951, #00373d, #00191C); /// some styling for the tiles
+	color: white ;		/// text color
+	text-align: center;		///// have text central
+	margin: 5px;			///// have a little border between tiles
+	position: relative;		///// to have them in a line
+	overflow:  scroll; /// so tiles are in line
 
 
 }
 
-.navbar-custom
-{
-	background-color: #00191C;
-}
 
 
 .body {
@@ -47,61 +61,58 @@ body
 
 }
 
-
 .navbar {
 	background-image: url('background-color.png');
 	background-repeat: repeat-x repeat-y
 }
 
+.navbar-custom
+{
+	background-color: #00191C; //// to have the nav bar the same colour as the one on sparta global
+	margin: auto;		////no spacing between the edge of the screen and nav bars
+
+}
 
 .logo {
-	background-image: url('logo.svg');
-	width:100px;
-	height:30px;
-	position:relative;
-	
+
+	background-image: url('logo.svg');  /// logo for nav bar of sparta global
+	width:100px;			//// size
+	height:30px;		
+	position:relative;			/// to have it at the front on the bar
 	background-size:contain;
-	
-	background-repeat: no-repeat
-
+	background-repeat: no-repeat; /// dont want any repeating 
 
 }
 
-.footer-website {
-	padding: 20px 290px 20px 290px;
-}
-
-.footer-website a {
-	color: white;
-}
 
 .footer-item {
-	padding: 20px 290px 20px 290px;
+	padding: 20px 290px 20px 290px;     //// so the buttons on the bottom nav bar are central
 }
 
 .footer-item a {
-	color: white;
+	color: white;			///// so text is white
 }
 
-.center {
+.center { // fix the body not to underlap the navigation bars and footer
+
 	
-	margin-top: 70px;
+	margin-top: 70px; 
 	margin-bottom:100px;
 	margin-right:20px;
 	margin-left:20px
 }
 
 
-.fixed-bottom {
+.fixed-bottom {  // fixes the navigation bar to the bottom of the screen 
 	margin-bottom :0px
 }
 
-.container {
+.container { // fix the logo in the nav bar to appear on the right
 	
 	margin-left:5px;
 }
 
-.email {
+.email { // fix the sign in and sign up position 
 	
 	display:block;
 	height:10px;
@@ -112,6 +123,7 @@ body
 	margin-left:20px
 
 }
+
 
 
 

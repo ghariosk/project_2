@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	get 'public/index', to: 'public#index' # public/index sends request to the index function in the public controller
+  get 'public/index', to: 'public#index' # public/index sends request to the index function in the public controller
 	get 'users/index', to: 'users#index' #  users/index sends request to the index function in the users controller 
  	resources :public # automatically routes public to the the 7 restful routes t
   	get 'home', to: 'public#home' # home sends request to the home function in the public controller
