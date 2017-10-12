@@ -32,7 +32,7 @@ body
 	background-size: 1500px 1000px;
 	text-align: center; 		//// so text and div are central
 	margin-top: 70px;			//// gap at top for nav bar
-	margin-bottom: 80px;		//// gap at bottom for footer bar
+	margin-bottom: 80px;		//// gap at bottom for footer bars
 
 }
 
@@ -42,13 +42,13 @@ body
 	width: 350px;
 
 	display: inline-block;		//// how to have them sitting next to one another
-	border: solid grey;			//// grey border so we can have more styling
 	background: radial-gradient(#004951, #00373d, #00191C); /// some styling for the tiles
 	color: white ;		/// text color
 	text-align: center;		///// have text central
 	margin: 5px;			///// have a little border between tiles
 	position: relative;		///// to have them in a line
 	overflow:  scroll; /// so tiles are in line
+
 
 
 }
@@ -99,7 +99,7 @@ img {
 
 
 .footer-item {
-	padding: 20px 290px 20px 290px;     //// so the buttons on the bottom nav bar are central
+	padding: 10px 290px 10px 290px;     //// so the buttons on the bottom nav bar are central
 }
 
 .footer-item a {
