@@ -1,59 +1,51 @@
-
+<%# A div will store all information about a project in a tile which will be rendered to the page. %>
 <div class="tile">
 
- 	<p> Name : <%= project.name %> </p>
- 	<p> Description : <%= project.desc %> </p>
-   	s
- 	<p> Git : <%= project.git %> </p>
- 	<p> Registered : <%= project.approved %> </p>
 
- <!-- 	<p> Email : <%=  @a = UserProject.all.where(project_id:project.id) %> </p> -->
- 	
-
+<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
+<p> Name : <%= project.name %> </p>
+<p> Description : <%= project.desc %> </p>
+<p> Image: <%= project.image %> </p>
+<p> Git : <%= project.git %> </p>
+<p> Registered : <%= project.approved %> </p>
 
 
+ 
+<%# An email address is used with project_id to render matching projects. %>
+<p> Email : <%=  @a = UserProject.all.where(project_id:project.id) %> </p>
+	
+<%# Finds user names from User to render with projects. %>
+<p> Participants </p>
 
-	<p> Participants </p>
+<%  @a.each_with_index do |element,index| %>
+	<%= User.find(element.user_id).name  %>
+<% end %> 
 
-	<%  @a.each_with_index do |element,index| %>
+<%# This if statement  directs users to particular paths. %>
+<% if not action_name == "home" || "public#show"  %>
 
+		<%# This link will direct users to a page which will display their project. %>
+		<%= link_to "Show", user_project_path(current_user, Project.find(project.id ))  %>	
 
-		<%= User.find(element.user_id).name  %>
-		
-	<% end %> 
+<% elsif action_name == "home" %>
 
+	<%# This link will direct users to a show page of a requested project. %>
+	<% link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
 
-	<% if not action_name == "home" || "public#show"  %>
+<% elsif action_name == "home" || "projects#index" %>
 
+ 		<%# This link will direct users to an edit form where they can edit information about their projects. %>
+ 		<%= link_to "Edit", edit_user_project_path(current_user, Project.find(project.id) ) %>
 
- 		<%= link_to "Show", user_project_path(current_user, Project.find(project.id ))  %>	
+		<%# This link will delete a user's project from the application. %>
+		<%= link_to "Delete", user_project_path(current_user, Project.find(project.id)), method: :delete  %>
 
+		<%# This link will direct users to a page which will display their project. %>
+		<%= link_to "Show", user_project_path(current_user, Project.find(project.id)) %>
 
-    <% elsif action_name == "home" %>
-
-
-		<% link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
-
-
-	<% elsif action_name == "home" || "projects#index" %>
-
-	 		<%= link_to "Edit", edit_user_project_path(current_user, Project.find(project.id) ) %>
-
-
-			<%= link_to "Delete", user_project_path(current_user, Project.find(project.id)), method: :delete  %>
-
-
-			<%= link_to "Show", user_project_path(current_user, Project.find(project.id)) %>
-
-
-	<% end %>
-
+<% end %>
 
 <br>
-
-
-
-
 
 </div>
 

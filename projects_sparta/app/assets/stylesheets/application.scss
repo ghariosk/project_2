@@ -1,21 +1,35 @@
-
-
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
 
 @import "animate";
-
-@import "bootstrap-sprockets" ;
+@import "bootstrap-sprockets";
 @import "bootstrap";
-
 
 html {
     font-size: 100%;  /////to make sure we have 
 }
 
+
 body 
 { 
+
+	background-image: url("https://www.spartaglobal.com/img/media-hub-bg.jpg"); ///// so logo
+	background-repeat: repeat-y;
 	text-align: center; 		//// so text and div are central
 	margin-top: 70px;			//// gap at top for nav bar
 	margin-bottom: 70px;		//// gap at bottom for footer bar
+
 }
 
 .tile
@@ -31,6 +45,19 @@ body
 	position: relative;		///// to have them in a line
 	overflow:  scroll; /// so tiles are in line
 
+
+}
+
+
+
+.body {
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+
+.navbar {
+	background-image: url('background-color.png');
+	background-repeat: repeat-x repeat-y
 }
 
 .navbar-custom
@@ -47,7 +74,6 @@ body
 	position:relative;			/// to have it at the front on the bar
 	background-size:contain;
 	background-repeat: no-repeat; /// dont want any repeating 
-
 
 }
 
