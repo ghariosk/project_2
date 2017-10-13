@@ -30,11 +30,9 @@ body
 	font-family: 'Raleway', sans-serif !important;
 	background-size: 1500px 1000px;
 	text-align: center; 		//// so text and div are central
-	margin-top: 70px;			//// gap at top for nav bar
+	margin-top: 80px;			//// gap at top for nav bar
 	margin-bottom: 80px;		//// gap at bottom for footer bars
 }
-
-
 img {
 	
     max-width: 100%;
@@ -113,7 +111,7 @@ img {
 	position:absolute;
 	font-size: 12px;
 	right:0;
-	top:0px;
+	top:25px;
 }
 
 /*a:hover {
@@ -133,7 +131,6 @@ img {
 	position: relative ;
 	border-radius:5px;
 	background-image:url('logo.png');  // should  be <%= @project.image %>
-	display: inline-block;
 }
 
 
@@ -163,6 +160,22 @@ table {
 	background-color: green!important ;
 }
 
+.buttonbox{
+	width: 400px;
+	height: 50px;
+	background: linear-gradient(to bottom right, white, #f1f1f1);
+	display: inline-block;
+	position: relative;	
+}
+
+
+.projectbox{
+	height: 400px;				/* size for tiles*/
+	width: 400px;
+	display:inline-block ;		//// how to have them sitting next to one another
+	text-align: center;		///// have text central
+	position: relative;
+}
 
 tr:hover {
 	background-color: blue!important;
@@ -184,13 +197,8 @@ tr:hover {
 
 }
 
-
-
-
-
-
-
-
-
+.forms{
+	text-align: center;
+}
 
 

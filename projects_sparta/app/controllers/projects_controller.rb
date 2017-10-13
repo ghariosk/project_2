@@ -10,21 +10,22 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @user=@user=User.all.find(params[:user_id]) # create a new database entry for a project and of USerProject, linking the user to the project
+    @user=User.all.find(params[:user_id]) # create a new database entry for a project and of USerProject, linking the user to the project
     @project=Project.new
     @userproject=UserProject.new
   end
 
   def create
     @user=User.all.find(params[:user_id]) # hydrate the data into the newly created databse of project and userproject
-    new_project=Project.create(project_params)
-    new_project.image= params[:file]
-    new_project.save!
-   
 
-    @userproject=UserProject.create(project_id: new_project.id, user_id:@user.id)
-    @userproject.save
-    redirect_to user_projects_path
+    @project = Project.create(project_params)
+    @userproject = UserProject.create(project_id: @project.id, user_id:@user.id)
+    if @project.save
+      redirect_to user_projects_path
+    else
+      render :new
+    end
+    
   end
 
   def edit

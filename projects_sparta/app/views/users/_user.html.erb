@@ -10,8 +10,8 @@
 </p>
 <%= link_to "Edit Level" ,edit_user_path(user), :class => 'btn btn-primary' if current_user.admin == true %>
 <%# Fields store information about a user, including name, avatar, date of birth, start date, academy, stream, programming language, email address and if a user is an admin user. %>
-<p>Academy: <%= user.academy %> | Start Date: <%= user.startdate %></p>
-<p>Language: <%= user.language %> | Stream: <%= user.stream %></p>
+
+<p> Email <%= user.email %> </p>
 
 <%# This link will display a users personal project. %>
 <%= link_to "Personal Project", user_projects_path(user), :class => 'btn btn-primary' %>

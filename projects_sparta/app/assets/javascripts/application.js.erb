@@ -23,19 +23,25 @@
 
 
 $(function () {
+
+
+	
+
 	$('.check-box').each(function () {
 		$(this).on('click', function () {
-			console.log('check')
-			$(this).submit()
+			console.log('check');
+			$(this).submit();
 		})
 	})
 
 	$('.tile').hover(function () {
-		$(this).children().fadeIn(300)
+		$(this).dequeue();
+		$(this).children().fadeIn(300);
 	})
 
 	$('.tile').mouseleave(function () {
-		$(this).children().fadeOut(300)
+		$(this).dequeue();
+		$(this).children().fadeOut(300);
 	})
 
 	$('.submit').addClass('btn btn-primary')
