@@ -4,8 +4,8 @@ class Project < ApplicationRecord
 	has_many :users, 
 	through: :user_project
   
-	validates :name, :desc, :git, presence: true
-	validates :name, length: { minimum: 5, maximum: 500, message: "must be between 5 and 500 characters!" }
+	validates :name, :desc,:image, :git, presence: true
+	validates :name, length: { minimum: 3, maximum: 100, message: "must be between 3 and 100 characters!" }
 
 	mount_uploader :image, ImageUploader
 
