@@ -148,7 +148,7 @@ img {
 	overflow: hidden; /// so tiles are in line
 	position :relative ;
 	border-radius:5px;
-	background-image:url('logo.png');  // should  be <%= @project.image %>
+
 }
 
 .text {
@@ -158,8 +158,45 @@ img {
 	background-color:rgba(0,0,0,0.9);
 	height: 350px ;
 	width :400px;
+	opacity:1; 
 }
 
+img {
+	height:30px;
+	width:30px;
+	background-size: contain;
+}
+
+
+table {
+	text-align: initial;
+}
+
+
+.green {
+	background-color: green!important ;
+}
+
+
+tr:hover {
+	background-color: blue!important;
+}
+
+
+
+.form-control {
+	width:200px !important;
+	display:inline !important;
+	postion:absolute;
+
+
+}
+
+.field {
+
+	display: block;
+
+}
 
 
 
