@@ -1,6 +1,6 @@
 <p> <%= user.name %>  <% if user.admin == true %> | Admin <% end %>  
 <p>Current user id is: <%= current_user.id %></p>
-
+	
 <% if current_user.id.to_i != user.id.to_i %>
 	<%= form_for @users.find(user.id), :html => { :class => 'check-box' } do |f| %>
 		<%= f.label :admin, :class => 'check-box' %>

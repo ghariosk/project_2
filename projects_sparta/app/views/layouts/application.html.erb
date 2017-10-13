@@ -20,11 +20,10 @@
 
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" >
-      <a class="navbar-brand" href="/home">
+    <nav class="navbar navbar-expand navbar-dark navbar-custom fixed-top" >
+      <a class="navbar-brand" href="https://www.spartaglobal.com/">
         <div class="logo"> </div>      
       </a>
-
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">
         </span>
@@ -51,22 +50,41 @@
                 <a class="nav-link btn" href="/users">User base</a>
               </li>
             <% end %>
-          <% end %>
-        </ul>
-      </div>
-    </nav>
-    <div class='email'> 
-      <p class="pull-right">
+
+            <% if user_signed_in? %>
+            <li class="nav-item">
+
+
+            <%= link_to "Create Project", new_user_project_path(current_user), :class => "nav-link active" %>
+
+            </li>
+
+           <% end %>
+
+           <% end %>
+
+
+        <li class="nav-item">
+        <div class='email nav-link active pull-right'> 
+   
         <% if user_signed_in? %>
           Logged in as <strong> <%= current_user.email %> </strong>
-          <%= link_to "Edit Profile", edit_user_registration_path %> 
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %> 
+          <%= link_to "Edit Profile", edit_user_registration_path, :class => "btn btn-info btn-sm" %> 
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "btn btn-danger btn-sm" %> 
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> 
-          <%= link_to "Login", new_user_session_path %> 
+          <%= link_to "Sign up", new_user_registration_path, :class => "btn btn-primary btn-sm" %> 
+          <%= link_to "Login", new_user_session_path, :class => "btn btn-primary btn-xs" %> 
         <% end %>
-      </p>
-    </div>
+       
+        </div>
+        </li>
+        </ul>
+      </div>
+
+
+
+    </nav>
+
     <div class='center'>
       <% if notice %>
     	  <p class="alert alert-success"> <%= notice %> </p>
@@ -76,7 +94,7 @@
     	<% end %>
       <%= yield %>
     </div>
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom navbar-custom">
+     <!--  <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom navbar-custom">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     		  <span class="navbar-toggler-icon">
@@ -85,13 +103,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
     			<ul class="navbar-nav mr-auto">
     				<li class="footer-item">
-    					<a class="sparta-link" href="https://www.spartaglobal.com/">Sparta Global<span class="sr-only">(current)</span></a>
+    					(current)</span></a>
     				</li>
     				<li class="footer-item">
     					<a class="contacts-link" href="https://www.spartaglobal.com/contact/">Contact Sparta<span class="sr-only">(current)</span></a>
     				</li>
     			</ul>
     		</div>
-      </nav>
+      </nav> -->
     </body>
 </html>
