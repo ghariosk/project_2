@@ -34,8 +34,9 @@ body
 	margin-bottom: 80px;		//// gap at bottom for footer bars
 }
 
-img {
 
+img {
+	
     max-width: 100%;
     max-height: 100%;
 }
@@ -47,7 +48,6 @@ img {
 	position: relative;
 	margin: 0 auto;
 }
-
 
 
 .body {
@@ -130,10 +130,12 @@ img {
 	margin:2px 6px 2px 6px;			///// have a little border between tiles
 	position: relative;		///// to have them in a line
 	overflow: hidden; /// so tiles are in line
-	position :relative ;
+	position: relative ;
 	border-radius:5px;
-
+	background-image:url('logo.png');  // should  be <%= @project.image %>
+	display: inline-block;
 }
+
 
 .text {
 	position:relative;
