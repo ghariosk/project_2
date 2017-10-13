@@ -2,7 +2,7 @@
 
 A project system for Sparta Global.
 
-## Functionality
+## Functionality and Services
 
 ### Getting Started
 
@@ -15,13 +15,30 @@ When a user logs in, they can create their own projects, as well as editing and 
 
 The user can navigation to the homepage and public projects in a normal visitor mode. Users who are logged in can have access to their personal projects, as well as creating, viewing and deleting project tiles from the application. An admin user will have access to the user log, which allows project approval and user control (including setting users to admin).
 
-### Footer Navigation Bar
-
-The user can navigate to the official Sparta Global website and to the Sparta Global Contact forms, which enable users to request a contact from client at Sparta Global.
-
 ## Implementation
 
-### 
+### Language
+The project was developed using a wide range of Ruby on Rails functions with the addition of Bootstrap. CSS, HTML on Rails and JQuery were also implemented into the design.
+
+### Gemfiles
+* gem j-query-rails (the jquery gem for rails)
+* gem popper_js version 1.12.3 (popper gem for rails, which adds interactive functionality to Bootstrap)
+* gem animate.css-rails version 3.2.0 (animation css gem for rails)
+* gem bootstrap-sass version 3.3.6 (Bootstrap gem for rails)
+* gem devise
+
+### Database Creation
+Three databases were created for the project.
+
+### Database Initialization
+
+### Configuration
+
+## Deployment
+
+## Authors
+
+This application was developed by Karl Gharious, Luke Heudebourck and Priyam Patel.
 
 Things you may want to cover:
 

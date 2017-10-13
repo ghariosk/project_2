@@ -19,6 +19,7 @@
 
 html {
     transition: all .3s;
+    font-family: 'Raleway', sans-serif;
     font-size: 100%;  /////to make sure we have 
 }
 
@@ -38,7 +39,6 @@ body
 {
 	height: 350px;				///// size for tiles
 	width: 350px;
-	font-family: raleway;
 	display: inline-block;		//// how to have them sitting next to one another
 	border: solid grey;			//// grey border so we can have more styling
 	background: radial-gradient(#004951, #00373d, #00191C); /// some styling for the tiles
@@ -74,7 +74,6 @@ img {
 .navbar {
 	background-image: url('background-color.png');
 	background-repeat: repeat-x repeat-y;
-	font-family: raleway;
 }
 
 .navbar-custom
