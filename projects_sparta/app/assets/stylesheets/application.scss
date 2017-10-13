@@ -27,13 +27,12 @@ body
 { 
 	background-image: url("https://www.spartaglobal.com/img/media-hub-bg.jpg"); ///// so logo
 	background-repeat: repeat-y;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif !important;
 	background-size: 1500px 1000px;
 	text-align: center; 		//// so text and div are central
 	margin-top: 70px;			//// gap at top for nav bar
 	margin-bottom: 80px;		//// gap at bottom for footer bars
 }
-
 
 
 img {
@@ -122,7 +121,7 @@ img {
 }*/
 
 .tile {
-	height: 320px;				/* size for tiles*/
+	height: 320px;				/////size for tiles
 	width: 400px;
 	display:inline-block ;		//// how to have them sitting next to one another
 	border: 1px solid grey;			//// grey border so we can have more styling
