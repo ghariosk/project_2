@@ -1,30 +1,51 @@
 <%# This form enables a user to store information about a project. %>
+
+<% if @project.errors.any? %>
+    <h3><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h3>
+    <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+
+
+
 <%= form_for([@user,@project]) do |f| %>
 	<%# A label and text field stores the project's name. %>
 	<%= f.label :name %>
 	<%= f.text_field :name %>
+	<br>
+	<br>
 
 	<%# A label and text field stores the project's description. %>
 	<%= f.label :desc %>
 	<%= f.text_field :desc %>
+	<br>
+	<br>
 
 	<%# A label and text field stores an image url. %>
 	<%= f.label :image %>
 	<%= f.text_field :image %>
 
+	<br>
+	<br>
 	<%= f.label :git %>
 	<%= f.text_field :git %>
+	<br>
 
 	<%# A label and text field stores a project's github url. %>
 		<% if current_user.admin == true %>
 	      <%# A label and text field creates a checkbox that will approve projects. %>
 	      	<%= f.label :approved %>
 	      	<%= f.check_box :approved %>
-	  	<% end %>                           
+	  	<% end %>         
+	  	<br>                  
+	  	<br>                  
 	<%# A submit button will render the form to the webpage. %>
 	<%= f.submit :class => "submit" %>
 <% end %>
-
 
 
 

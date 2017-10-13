@@ -150,7 +150,6 @@ img {
 	background: linear-gradient(to bottom right, white, #f1f1f1);
 	display: inline-block;
 	position: relative;	
-	margin: auto;
 }
 
 .projectbox{
@@ -158,9 +157,12 @@ img {
 	width: 400px;
 	display:inline-block ;		//// how to have them sitting next to one another
 	text-align: center;		///// have text central
-	position: relative;	
+	position: relative;
+
 }
 
-
+.forms{
+	text-align: center;
+}
 
 

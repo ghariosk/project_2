@@ -44,6 +44,7 @@
 					<%= link_to "Show", user_project_path(@user, Project.find(project.id )),:class => "btn btn-primary btn-sm" %>
 					<% end %>
 				<% elsif action_name == "home" %>
+					
 					<%# This link will direct users to a show page of a requested project. %>
 					<%#= link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
 				<% elsif action_name == "home" || action_name == "index" %>
