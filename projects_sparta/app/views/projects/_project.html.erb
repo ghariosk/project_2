@@ -1,10 +1,13 @@
 <% if project.approved == true || action_name == "index" || action_name == "show" %>
+
 	<div class="tile" style="background-image:url('<%= project.image %>')">
 
 
+<a style="display:block" href='<%=public_path(Project.find(project.id))%>' >
 
+		<div class="text" onclick="location.href='<%=public_path(Project.find(project.id))%>'">
 
-		<div class="text">
+		
 
 		
 		<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
@@ -32,14 +35,15 @@
 			<% end %>
 			</p>
 			<p> <%  @a = UserProject.all.where(project_id:project.id) %> </p>
-			<p> Participants </p>
+			<p> Credits: 
 			<%  @a.each_with_index do |element,index| %>
 				<%# Finds user names from User to render with projects. %>
-				<%= User.find(element.user_id).email %>
 				<%# An email address is used with project_id to render matching projects. %>
-				<%# Finds user email from User to render with projects. %>
-				<%= User.find(element.user_id).name  %>
+				<%= User.find(element.user_id).name.capitalize + ", " %>
+
 		  	<% end %> 
+
+		  	</p>
 
 		  	<br>
 		<%# This if statement  directs users to particular paths. %>
@@ -61,24 +65,12 @@
 
 	</div>
 
+	</a>
+
 	</div>
+	
 <% end %>
 
-
-<div class="material-switch pull-right">
-                           
-
-
- <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDefault" class="label-default"></label>
-                        </div>
-
-
-
-<div class="material-switch pull-right">
-                            <input id="someSwitchOptionDanger" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDanger" class="label-danger"></label>
-</div>
 
 
 
