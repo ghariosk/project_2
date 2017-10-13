@@ -22,6 +22,7 @@ html {
     transition: all .3s;
     font-size: 100%;  /////to make sure we have 
 
+
 }
 
 
@@ -33,22 +34,24 @@ body
 	text-align: center; 		//// so text and div are central
 	margin-top: 70px;			//// gap at top for nav bar
 	margin-bottom: 80px;		//// gap at bottom for footer bars
-
+	font-family: raleway;
 }
 
 .tile
 {
 	height: 350px;				///// size for tiles
-	width: 350px;
+	width: 400px;
 
 	display: inline-block;		//// how to have them sitting next to one another
 	background: radial-gradient(#004951, #00373d, #00191C); /// some styling for the tiles
 	color: white ;		/// text color
 	text-align: center;		///// have text central
-	margin: 5px;			///// have a little border between tiles
+	margin-right: 25px;			///// have a little border between tiles
+	margin-left: 25px;
+	margin-top: 10px;
 	position: relative;		///// to have them in a line
 	overflow:  scroll; /// so tiles are in line
-
+	font-family: Khula;
 
 
 }
