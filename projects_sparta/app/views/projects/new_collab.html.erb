@@ -17,8 +17,10 @@
 <br>
 
 
-<%= f.label :project_id %>
-<%= f.text_field :project_id %>
+<%= f.collection_select :project_id, Project.all, :id, :name %>
+
+
+
 
 
 <br>
