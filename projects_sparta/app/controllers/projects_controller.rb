@@ -18,6 +18,10 @@ class ProjectsController < ApplicationController
   def create
     @user=User.all.find(params[:user_id]) # hydrate the data into the newly created databse of project and userproject
     new_project=Project.create(project_params)
+    new_project.image= params[:file]
+    new_project.save!
+   
+
     @userproject=UserProject.create(project_id: new_project.id, user_id:@user.id)
     @userproject.save
     redirect_to user_projects_path
