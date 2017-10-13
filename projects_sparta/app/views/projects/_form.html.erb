@@ -26,14 +26,17 @@
 	<br>
 
 	<%# A label and text field stores an image url. %>
-	<%= f.label :image %>
-	<%= f.text_field :image %>
+	<%#= f.label :image %>
+	<%#= f.text_field :image %>
 
 	<br>
 	<br>
 	<%= f.label :git %>
 	<%= f.text_field :git %>
 	<br>
+
+	<%= f.label :image %>
+	<%= file_field_tag :image %>
 
 	<%# A label and text field stores a project's github url. %>
 		<% if current_user.admin == true %>

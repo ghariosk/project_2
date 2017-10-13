@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
 
   def create
     @user=User.all.find(params[:user_id]) # hydrate the data into the newly created databse of project and userproject
+
     @project = Project.create(project_params)
     @userproject = UserProject.create(project_id: @project.id, user_id:@user.id)
     if @project.save

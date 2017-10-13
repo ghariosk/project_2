@@ -18,18 +18,20 @@
 
 # seeds for project we had 4 different ones just for a variety 
 
+
   u1 = User.create(email: "pri@mail.com", password: "password", admin: false, name: "pri")
   u2 = User.create!(email:"lucy@mail.com", password: "password",admin: true,name: "lucy")
+
 
 ### 2 users to test admin changes
 
 
 
   User.find_by(email:"pri@mail.com").update(admin: true)
+
   UserProject.create!(user_id: 1, project_id: p1.id )
   UserProject.create!(user_id: 2, project_id: p2.id )
   UserProject.create!(user_id: 1, project_id: p3.id )
   UserProject.create!(user_id: 2, project_id: p3.id )
   UserProject.create!(user_id: 2, project_id: p4.id )
-
 ##### create a many to many bond for the users and the projects

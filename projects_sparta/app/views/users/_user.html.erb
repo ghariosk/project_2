@@ -10,14 +10,39 @@
 </p>
 <%= link_to "Edit Level" ,edit_user_path(user), :class => 'btn btn-primary' if current_user.admin == true %>
 <%# Fields store information about a user, including name, avatar, date of birth, start date, academy, stream, programming language, email address and if a user is an admin user. %>
+
 <p> Email <%= user.email %> </p>
+
 <%# This link will display a users personal project. %>
 <%= link_to "Personal Project", user_projects_path(user), :class => 'btn btn-primary' %>
 <%# This link will enable projects to be approved. %>
-<%= link_to "Approval", edit_user_path(user), :class => 'btn btn-primary' %> 
+ 
 <hr />
 
 
+
+    <tr <% if user.admin == true %> class='green' <% end %> >
+      	<th scope="row"> <%= user.id %> </th>
+      	<td><%= user.name %> </td>
+      	<td> <%= user.email %> </td>
+      	<td><% if current_user.id.to_i != user.id.to_i %>
+			<%= form_for @users.find(user.id), :html => { :class => 'check-box' } do |f| %>
+			<%= f.check_box :admin, :class => 'check-box' %>
+			<% end %> 
+			<% end %>
+		</td>
+		<td>
+		<%= link_to "Edit", user_projects_path(user), :class => 'btn btn-primary btn-sm' %>
+		</td>
+		<td>
+		<%= link_to "Edit", edit_user_path(user), :class => 'btn btn-primary btn-sm' %>
+		</td>
+		<td>
+		<%= link_to "Edit", edit_user_path(user), :class => 'btn btn-primary btn-sm' if current_user.admin == true %>
+		</td>
+	</tr>
+   
+ 
 
 
 

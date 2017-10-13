@@ -1,8 +1,10 @@
 <% if project.approved == true || action_name == "index" || action_name == "show" %>
+
 	
 	<div class="projectbox">
 		<a href="/users/<%=project.user_ids.first%>/projects/<%=project.id%>">
-		<div class="tile" #background-image="<%= project.image %> ">
+	<div class="tile" style="background-image:url('<%= project.image %>')">
+
 
 			<div class="text">
 			<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
@@ -31,10 +33,8 @@
 			<br>
 			</div>
 		</div>
-		</a> 
-		
-
-			<div class="buttonbox">
+		</a>
+    <div class="buttonbox">
 			<br>
 			<%# This if statement  directs users to particular paths. %>
 			
