@@ -30,6 +30,6 @@
   UserProject.create!(user_id: 2, project_id: p2.id )
   UserProject.create!(user_id: 1, project_id: p3.id )
   UserProject.create!(user_id: 2, project_id: p3.id )
-
+  UserProject.create!(user_id: 2, project_id: p4.id )
 
 ##### create a many to many bond for the users and the projects
