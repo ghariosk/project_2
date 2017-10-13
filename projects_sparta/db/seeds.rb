@@ -18,8 +18,10 @@
 
 # seeds for project we had 4 different ones just for a variety 
 
-  u1 = User.create(email: "pri@mail.com", password: "password", admin: false)
-  u2 = User.create!(email:"karl@mail.com", password: "password",admin: true)
+
+  u1 = User.create(email: "pri@mail.com", password: "password", admin: false, name: "pri")
+  u2 = User.create!(email:"lucy@mail.com", password: "password",admin: true,name: "lucy")
+
 
 ### 2 users to test admin changes
 
