@@ -144,9 +144,46 @@ img {
 	display:none;
 	background-color:rgba(0,0,0,0.9);
 	height: 350px ;
-	width: 400px;
+	width :400px;
+	opacity:1; 
 }
 
+img {
+	height:30px;
+	width:30px;
+	background-size: contain;
+}
+
+
+table {
+	text-align: initial;
+}
+
+
+.green {
+	background-color: green!important ;
+}
+
+
+tr:hover {
+	background-color: blue!important;
+}
+
+
+
+.form-control {
+	width:200px !important;
+	display:inline !important;
+	postion:absolute;
+
+
+}
+
+.field {
+
+	display: block;
+
+}
 
 
 
