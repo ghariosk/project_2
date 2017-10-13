@@ -16,13 +16,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-html {
 
-   
+html {
     transition: all .3s;
     font-size: 100%;  /////to make sure we have 
-
-
 }
 
 
@@ -30,6 +27,7 @@ body
 { 
 	background-image: url("https://www.spartaglobal.com/img/media-hub-bg.jpg"); ///// so logo
 	background-repeat: repeat-y;
+	font-family: 'Raleway', sans-serif;
 	background-size: 1500px 1000px;
 	text-align: center; 		//// so text and div are central
 <<<<<<< HEAD
@@ -38,6 +36,19 @@ body
 	font-family: raleway;
 }
 
+.tile
+{
+	height: 350px;				///// size for tiles
+	width: 350px;
+	display: inline-block;		//// how to have them sitting next to one another
+	border: solid grey;			//// grey border so we can have more styling
+	background: radial-gradient(#004951, #00373d, #00191C); /// some styling for the tiles
+	color: white ;		/// text color
+	text-align: center;		///// have text central
+	margin: 5px;			///// have a little border between tiles
+	position: relative;		///// to have them in a line
+	overflow:  scroll; /// so tiles are in line
+}
 
 img {
 
