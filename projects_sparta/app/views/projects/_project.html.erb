@@ -7,7 +7,6 @@
 		<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
 		 	<p> <%= project.name %> </p>
 		 	<p> <%= project.desc %> </p>
-		   	<%= project.image %> 
 		 	<p> Git : <%= project.git %> </p>
 		 	<% if action_name == "index" && current_user.admin == true %>
 				<p> Approved :  
