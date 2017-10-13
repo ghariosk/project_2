@@ -32,29 +32,13 @@ body
 	background-repeat: repeat-y;
 	background-size: 1500px 1000px;
 	text-align: center; 		//// so text and div are central
+<<<<<<< HEAD
 	margin-top: 70px;			//// gap at top for nav bar
 	margin-bottom: 80px;		//// gap at bottom for footer bars
 	font-family: raleway;
 }
 
-.tile
-{
-	height: 350px;				///// size for tiles
-	width: 400px;
 
-	display: inline-block;		//// how to have them sitting next to one another
-	background: radial-gradient(#004951, #00373d, #00191C); /// some styling for the tiles
-	color: white ;		/// text color
-	text-align: center;		///// have text central
-	margin-right: 25px;			///// have a little border between tiles
-	margin-left: 25px;
-	margin-top: 10px;
-	position: relative;		///// to have them in a line
-	overflow:  scroll; /// so tiles are in line
-	font-family: Khula;
-
-
-}
 img {
 
     max-width: 100%;
@@ -72,14 +56,15 @@ img {
 
 
 .body {
-	margin-top: 200px;
+	margin-top: 300px;
 	margin-bottom: 200px;
 
 }
 
 .navbar {
 	background-image: url('background-color.png');
-	background-repeat: repeat-x repeat-y
+	background-repeat: repeat-x repeat-y ;
+	height:100px;
 }
 
 .navbar-custom
@@ -112,7 +97,7 @@ img {
 .center { // fix the body not to underlap the navigation bars and footer
 
 	
-	margin-top: 70px; 
+	margin-top: 100px; 
 	margin-bottom:100px;
 	margin-right:20px;
 	margin-left:20px
@@ -129,16 +114,47 @@ img {
 }
 
 .email { // fix the sign in and sign up position 
-	
-	display:block;
-	height:10px;
 	width:auto;
-	position:relative;
-	margin-top:70px;
-	margin-right:20px;
-	margin-left:20px
-
+	position:absolute;
+	font-size: 12px;
+	right:0;
+	top:0px;
 }
+
+/*a:hover {
+	color:red;
+}*/
+
+.tile {
+	height: 320px;				/* size for tiles*/
+	width: 400px;
+	display:inline-block ;		//// how to have them sitting next to one another
+	border: 1px solid grey;			//// grey border so we can have more styling
+	color: white ;		/// text color
+	text-align: center;		///// have text central
+	margin:2px 6px 2px 6px;			///// have a little border between tiles
+	position: relative;		///// to have them in a line
+	overflow: hidden; /// so tiles are in line
+	position :relative ;
+	border-radius:5px;
+	background-image:url('logo.png');  // should  be <%= @project.image %>
+}
+
+.text {
+	position:relative;
+	color:white;
+	display:none;
+	background-color:rgba(0,0,0,0.9);
+	height: 350px ;
+	width :400px;
+}
+
+
+
+
+
+
+
 
 
 
