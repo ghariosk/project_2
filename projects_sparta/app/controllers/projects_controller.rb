@@ -18,7 +18,6 @@ class ProjectsController < ApplicationController
   def create
     @user=User.all.find(params[:user_id]) # hydrate the data into the newly created databse of project and userproject
     new_project=Project.create(project_params)
-    new_project.image= params[:file]
     new_project.save!
    
 
@@ -45,6 +44,25 @@ class ProjectsController < ApplicationController
     redirect_to user_projects_path
   end
 
+
+  def new_collab 
+
+    @collab=UserProject.new
+     
+  
+  end
+
+  def create_collab
+
+    @a = "hello"
+
+    new_collab=UserProject.create(userproject_params)
+    new_collab.save
+
+    redirect_to user_projects_path
+
+  end
+
   protected
 
   def project_params
@@ -54,5 +72,9 @@ class ProjectsController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name)
+  end
+
+  def userproject_params
+    params.require(:user_project).permit(:user_id, :project_id)
   end
 end

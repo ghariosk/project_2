@@ -15,6 +15,9 @@
 @import "animate";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap-social";
 
 
 html {
@@ -30,25 +33,11 @@ body
 	font-family: 'Raleway', sans-serif;
 	background-size: 1500px 1000px;
 	text-align: center; 		//// so text and div are central
-<<<<<<< HEAD
 	margin-top: 70px;			//// gap at top for nav bar
 	margin-bottom: 80px;		//// gap at bottom for footer bars
 	font-family: raleway;
 }
 
-.tile
-{
-	height: 350px;				///// size for tiles
-	width: 350px;
-	display: inline-block;		//// how to have them sitting next to one another
-	border: solid grey;			//// grey border so we can have more styling
-	background: radial-gradient(#004951, #00373d, #00191C); /// some styling for the tiles
-	color: white ;		/// text color
-	text-align: center;		///// have text central
-	margin: 5px;			///// have a little border between tiles
-	position: relative;		///// to have them in a line
-	overflow:  scroll; /// so tiles are in line
-}
 
 img {
 
@@ -145,7 +134,7 @@ img {
 	text-align: center;		///// have text central
 	margin:2px 6px 2px 6px;			///// have a little border between tiles
 	position: relative;		///// to have them in a line
-	overflow: hidden; /// so tiles are in line
+	overflow: hidden;     /// so tiles are in line
 	position :relative ;
 	border-radius:5px;
 
@@ -197,13 +186,6 @@ tr:hover {
 	display: block;
 
 }
-
-
-
-
-
-
-
 
 
 

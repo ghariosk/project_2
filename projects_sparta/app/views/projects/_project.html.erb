@@ -12,7 +12,15 @@
 		 	<p> <%= project.desc %> </p>
 
 		   
-		 	<a href='<%=project.git%>'> <%= image_tag("github.png") %> </a>
+	<a href='<%=project.git%>' class="btn btn-social-icon btn-github white"> <span class="fa fa-github"> </span> 
+  </a>  
+
+
+  <a class="btn btn-social-icon btn-likedin black"> <span class="fa fa-linkedin"> </span> 
+  </a> 
+
+
+
 
 
 		 	<% if action_name == "index" && current_user.admin == true %>
@@ -52,7 +60,25 @@
 		<br>
 
 	</div>
+
+	</div>
 <% end %>
+
+
+<div class="material-switch pull-right">
+                           
+
+
+ <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionDefault" class="label-default"></label>
+                        </div>
+
+
+
+<div class="material-switch pull-right">
+                            <input id="someSwitchOptionDanger" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionDanger" class="label-danger"></label>
+</div>
 
 
 

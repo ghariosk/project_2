@@ -1,0 +1,38 @@
+<h1> Create collaboration</h1>
+
+
+
+<%= form_for(@collab, url: user_projects_create_collab_path) do |f| %>
+
+
+
+<%= f.collection_select :user_id, User.all, :id, :name %>
+
+
+
+
+<%# f.label :user_id %>
+<%# f.text_field :user_id %>
+
+<br>
+
+
+<%= f.label :project_id %>
+<%= f.text_field :project_id %>
+
+
+<br>
+<br>
+
+
+
+
+
+
+
+<%= f.submit %>
+
+
+<% end %>
+
+
