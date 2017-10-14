@@ -1,9 +1,11 @@
 # Project 2
 
+Project 2 is a system developed specifically for Sparta Global that enables visitors to view projects that have been undertake by Sparta Global trainees.
+
 The web application was developed in Sublime with Ruby-on-Rails as the primary programming structure for the project. HTML-on-Rails, JQuery JavaScript and CSS with Bootstrap were also implemented into the application. Project 2 utilises many Gemfiles such as jquery-rails, popper_js (1.12.3), animate.css-rails (3.2), bootstrap-sass (3.3.6).
 
 ## Functionality
-### Visitors
+### General Visitors
 A visitor can enter the web application without having to sign in or creating a user account, although visitors may create accounts if they wish to. Visitors can view previous Sparta Global Trainee projects from tiles that are neatly displayed on the homepage.
 
 ### Creating a user account
