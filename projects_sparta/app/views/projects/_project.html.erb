@@ -6,6 +6,12 @@
 	<div class="desc" onclick="location.href='<%=public_path(Project.find(project.id))%>'">
 
 	<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
+
+
+
+
+
+
 	<h3> <%= project.name %> </h3>
 	<p> <%= project.desc %> </p>
 	<p> Hello </p>
@@ -66,6 +72,38 @@
 
 
 	</div>
+
+		
+
+<i class='btn like fa fa-thumbs-up <% if Like.where(user_id:current_user.id,project_id:project.id).blank? == false %> blue <% end %>'> 
+
+<% if Like.where(user_id:current_user.id,project_id:project.id).blank? == false %>
+<p> yes </p>
+
+<% end %>
+
+
+		
+
+	<%= form_for(@like, url: user_projects_create_like_path(current_user), :class => 'like') do |f| %>
+	<div style='display:none'>	
+		<%= f.collection_select :user_id, User.all, :id, :name, {:selected => current_user.id } %>
+		<%= f.collection_select :project_id, Project.all, :id, :name, {:selected => project.id } %>
+		<% f.submit :class => "btn btn-primary like" %>
+
+</div>
+	<% end %>
+
+	
+
+
+
+	</i>
+
+
+
+
+	
 
 
 
