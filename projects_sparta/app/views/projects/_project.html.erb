@@ -16,7 +16,7 @@
 	<p> <%= project.desc %> </p>
 	<p> Hello </p>
 
-	<p> <%= Like.where(project_id:project.id).count() %> </p>
+
 
 		   
 	<a href='<%=project.git%>' class="btn btn-social-icon btn-github white"> <span class="fa fa-github"> </span> 
@@ -31,13 +31,14 @@
 
 
 		 	<% if action_name == "index" && current_user.admin == true %>
-				<p> Approved :  
+			 
 				<%= form_for ([@user, @user.projects.find(project.id)]), :html => {:class =>'check-box'} do |f| %>
+				Approved:
 					<%= f.check_box :approved, :class =>'check-box' %>
 					<% f.submit :class => 'check-box' %>
 					<% end %>
 			<% end %>
-			</p>
+			
 			<p> <%  @a = UserProject.all.where(project_id:project.id) %> </p>
 			<p> Credits: 
 			<%  @a.each_with_index do |element,index| %>
@@ -46,10 +47,8 @@
 				<%= User.find(element.user_id).name.capitalize + ", " %>
 
 		  	<% end %> 
-
 		  	</p>
 
-		  	<br>
 		<%# This if statement  directs users to particular paths. %>
 		<% if not action_name == "home" || "public#show"  %>
 			<%# This link will direct users to a page which will display their project. %>
@@ -75,16 +74,20 @@
 
 		
 
-<i class='btn like fa fa-thumbs-up <% if Like.where(user_id:current_user.id,project_id:project.id).blank? == false %> blue <% end %>'> 
+<i class='btn like fa fa-thumbs-up <% if user_signed_in? %> <% if Like.where(user_id:current_user.id,project_id:project.id).blank? == false %> blue <% end %> <% end %>'> 
 
-<% if Like.where(user_id:current_user.id,project_id:project.id).blank? == false %>
-<p> yes </p>
+<% if user_signed_in? %>
 
-<% end %>
+
+
+<%# if Like.where(user_id:current_user.id,project_id:project.id).blank? == false %>
+
+
+<%# end %>
 
 
 		
-
+	
 	<%= form_for(@like, url: user_projects_create_like_path(current_user), :class => 'like') do |f| %>
 	<div style='display:none'>	
 		<%= f.collection_select :user_id, User.all, :id, :name, {:selected => current_user.id } %>
@@ -93,12 +96,16 @@
 
 </div>
 	<% end %>
+<% end %>
 
 	
 
 
 
-	</i>
+	</i>  
+
+
+		<p> <%= Like.where(project_id:project.id).count() %> </p>
 
 
 
