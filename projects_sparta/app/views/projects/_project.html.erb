@@ -1,18 +1,16 @@
 <% if project.approved == true || action_name == "index" || action_name == "show" %>
 
+
 	<div class="tile" style="background-image:url('<%= project.image %>')">
 
+	<div class="desc" onclick="location.href='<%=public_path(Project.find(project.id))%>'">
 
-<a style="display:block" href='<%=public_path(Project.find(project.id))%>' >
+	<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
+	<h3> <%= project.name %> </h3>
+	<p> <%= project.desc %> </p>
+	<p> Hello </p>
 
-		<div class="text" onclick="location.href='<%=public_path(Project.find(project.id))%>'">
-
-		
-
-		
-		<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
-		 	<p> <%= project.name %> </p>
-		 	<p> <%= project.desc %> </p>
+	<p> <%= Like.where(project_id:project.id).count() %> </p>
 
 		   
 	<a href='<%=project.git%>' class="btn btn-social-icon btn-github white"> <span class="fa fa-github"> </span> 
@@ -52,7 +50,7 @@
 			<%= link_to "Show", user_project_path(@user, Project.find(project.id ))  %>	
 		<% elsif action_name == "home" %>
 			<%# This link will direct users to a show page of a requested project. %>
-			<%= link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
+			<%# link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
 		<% elsif action_name == "home" || action_name == "index" %>
 		    <%# This link will direct users to an edit form where they can edit information about their projects. %>
 			<%= link_to "Edit", edit_user_project_path(@user, Project.find(project.id) ) %>
@@ -65,9 +63,13 @@
 
 	</div>
 
-	</a>
+
 
 	</div>
+
+
+
+
 	
 <% end %>
 
