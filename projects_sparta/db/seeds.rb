@@ -13,7 +13,9 @@
   p1 = Project.create!(name: "Sparta Invader", desc: "A web-game based on the classic Space Invader. Watch out, it's addictive !", git: "URL", approved: true)
   p2 = Project.create!(name: "Hangman", desc: " The famous Hangman game, in a webpage !", git: "URL 2", approved: true)
   p3 = Project.create!(name: "Snake", desc: "The throwback Snake mobile game on the web !", git: "URL 2", approved: true)
-  p4 = Project.create!(name: "Blog", desc: "A web-based blog  that lets you post everything that you want to talk about games!", git: "URL", approved: true)
+  p4 = Project.create!(name: "Blog Application", desc: "A web-based blog  that lets you post everything that you want to talk about games!", git: "URL", approved: true)
+  p5 = Project.create!(name: "Personal Website", desc: "A personal website made with HTML, CSS and JavaScript.", git: "Url", approved: true)
+  p6 = Project.create!(name: "FakeTube", desc: "A YouTube style video posting service created with HTML, CSS and JavaScript,", git: "Url", approved: true)
 
 
 # seeds for project we had 4 different ones just for a variety 
@@ -34,15 +36,21 @@ u2 = User.create!(email:"lucy@mail.com", password: "password",admin: true,name: 
   UserProject.create!(user_id: 1, project_id: p3.id )
   UserProject.create!(user_id: 2, project_id: p3.id )
   UserProject.create!(user_id: 2, project_id: p4.id )
+  UserProject.create!(user_id: 1, project_id: p5.id )
+  UserProject.create!(user_id: 2, project_id: p6.id )
 
 
 
   Like.create!(user_id:1, project_id: 2)
   Like.create!(user_id:1, project_id:3)
   Like.create!(user_id:1, project_id:4)
+  Like.create!(user_id:1 , project_id:5)
+  Like.create!(user_id:1 , project_id:6)
 
   Like.create!(user_id:2, project_id:2)
   Like.create!(user_id:2 , project_id:1)
+  Like.create!(user_id:2 , project_id:5)
+  Like.create!(user_id:2 , project_id:6)
 
 
 ##### create a many to many bond for the users and the projects
