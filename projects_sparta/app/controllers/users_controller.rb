@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   # limits the accessibility to signed in users only
-
-     before_action :authenticate_user!
+    before_action :authenticate_user!
     def index
       if current_user.admin == true # show a list of all users registered if the current user is an admin
         @users=User.all 
