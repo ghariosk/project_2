@@ -31,7 +31,7 @@
 
 html {
     transition: all .3s;
-    font-size: 100%;  /////to make sure we have 
+    font-size: 100%;  /////to make sure we have correct font size; 
 }
 
 
@@ -39,17 +39,14 @@ body
 { 
 	background-image: url("https://www.spartaglobal.com/img/media-hub-bg.jpg"); ///// so logo
 	background-repeat: repeat-y;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif !important;
 	background-size: 1500px 1000px;
 	text-align: center; 		//// so text and div are central
-	margin-top: 70px;			//// gap at top for nav bar
+	margin-top: 90px;			//// gap at top for nav bar
 	margin-bottom: 80px;		//// gap at bottom for footer bars
-	font-family: raleway;
 }
 
-
 img {
-
     max-width: 100%;
     max-height: 100%;
 }
@@ -61,7 +58,6 @@ img {
 	position: relative;
 	margin: 0 auto;
 }
-
 
 
 .body {
@@ -104,8 +100,6 @@ img {
 }
 
 .center { // fix the body not to underlap the navigation bars and footer
-
-	
 	margin-top: 100px; 
 	margin-bottom:100px;
 	margin-right:20px;
@@ -127,16 +121,13 @@ img {
 	position:absolute;
 	font-size: 12px;
 	right:0;
-	top:0px;
+	top:25px;
 }
 
-/*a:hover {
-	color:red;
-}*/
-
 .tile {
-	height: 320px;				/* size for tiles*/
+	height: 320px;				/////size for tiles
 	width: 400px;
+
 	display:inline-block ;	 /*how to have them sitting next to one another*/
 	border: 1px solid grey;			/*grey border so we can have more styling*/
 	color: white ;	 /*text color*/
@@ -151,7 +142,6 @@ img {
 }
 
 .desc {
-
 	color:white;
 
 	background-color:rgba(0,0,0,0.9);
@@ -159,9 +149,10 @@ img {
 	width :400px;
 	opacity:1; 
 	cursor: pointer;
+	display:none;
 
 	vertical-align : middle;
-	display: inline-block;
+
 	padding:40px 50px 40px 50px
 }
 
@@ -181,26 +172,37 @@ table {
 	background-color: green!important ;
 }
 
+.buttonbox{
+	width: 400px;
+	height: 50px;
+	background: linear-gradient(to bottom right, white, #f1f1f1);
+	display: inline-block;
+	position: relative;	
+}
+
+
+.projectbox{
+	height: 400px;				/* size for tiles*/
+	width: 400px;
+	display:inline-block ;		//// how to have them sitting next to one another
+	text-align: center;		///// have text central
+	position: relative;
+}
 
 tr:hover {
 	background-color: blue!important;
 }
 
-
-
 .form-control {
 	width:200px !important;
 	display:inline !important;
 	postion:absolute;
-
-
 }
 
 .field {
-
 	display: block;
-
 }
+
 
 
 .dropdown-toggle::after {
@@ -214,12 +216,12 @@ tr:hover {
 
 
 .blue {
-	color:blue ;
+	color:#00BEF1 ;
 }
 
-
-
-
+.forms{
+	text-align: center;
+}
 
 
 
