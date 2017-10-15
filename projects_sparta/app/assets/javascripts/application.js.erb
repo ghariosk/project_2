@@ -20,6 +20,10 @@
 
 //= require jquery3
 
+//= require bootstrap-select
+
+//= require select2-full
+
 
 
 $(function () {
@@ -42,8 +46,26 @@ $(function () {
 	$('.action').addClass('btn btn-primary')
 
 
-	$(".text").click(function(){
-   window.location=$(this).find("a").attr("href"); return false;
-});
+// 	$(".desc").click(function(){
+//    window.location=$(this).find("div").attr("href"); return false;
+// });
+
+	// $('.tile').hover(function () {
+	// $('[data-toggle="popover"]').popover()
+	// })
+
+	// $('.tryselect').select2({
+	// 	 placeholder: 'Select an option'
+	// });
+
+
+	$('.like').each(function () {
+		console.log('check')
+		$(this).on('click',function () {
+			console.log('check')
+			$(this).children().submit()
+		})
+	})
+
 })
 

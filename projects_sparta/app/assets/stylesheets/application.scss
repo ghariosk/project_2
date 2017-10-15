@@ -18,6 +18,15 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap-social";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+
+@import "bootstrap-select";
+
+
+
 
 
 html {
@@ -128,26 +137,32 @@ img {
 .tile {
 	height: 320px;				/* size for tiles*/
 	width: 400px;
-	display:inline-block ;		//// how to have them sitting next to one another
-	border: 1px solid grey;			//// grey border so we can have more styling
-	color: white ;		/// text color
-	text-align: center;		///// have text central
-	margin:2px 6px 2px 6px;			///// have a little border between tiles
-	position: relative;		///// to have them in a line
-	overflow: hidden;     /// so tiles are in line
+	display:inline-block ;	 /*how to have them sitting next to one another*/
+	border: 1px solid grey;			/*grey border so we can have more styling*/
+	color: white ;	 /*text color*/
+	text-align: center;		/* have text central*/
+	margin:2px 6px 2px 6px;			 /*have a little border between tiles*/
+	position: relative;		 /*to have them in a line*/
+	overflow: hidden;     /*o tiles are in line*/
 	position :relative ;
 	border-radius:5px;
 
+
 }
 
-.text {
-	position:relative;
+.desc {
+
 	color:white;
-	display:none;
+
 	background-color:rgba(0,0,0,0.9);
 	height: 350px ;
 	width :400px;
 	opacity:1; 
+	cursor: pointer;
+
+	vertical-align : middle;
+	display: inline-block;
+	padding:40px 50px 40px 50px
 }
 
 img {
@@ -186,6 +201,24 @@ tr:hover {
 	display: block;
 
 }
+
+
+.dropdown-toggle::after {
+	display:none !important;
+}
+
+
+.show {
+	display:inline-block !important;
+}
+
+
+.blue {
+	color:blue ;
+}
+
+
+
 
 
 

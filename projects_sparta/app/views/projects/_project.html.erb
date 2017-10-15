@@ -1,7 +1,7 @@
 <% if project.approved == true || action_name == "index" || action_name == "show" %>
 
 
-	<div class="tile" style="background-image:url('<%= project.image %>')">
+	<div class="tile" style="background-image:url('<%= project.image.tile %>')">
 
 	<div class="desc" onclick="location.href='<%=public_path(Project.find(project.id))%>'">
 
@@ -14,9 +14,8 @@
 
 	<h3> <%= project.name %> </h3>
 	<p> <%= project.desc %> </p>
-	<p> Hello </p>
 
-
+	
 
 		   
 	<a href='<%=project.git%>' class="btn btn-social-icon btn-github white"> <span class="fa fa-github"> </span> 
@@ -63,6 +62,7 @@
 
 			<%= link_to "Delete", user_project_path(@user, Project.find(project.id)), method: :delete  %>
 			<%= link_to "Show", user_project_path(@user, Project.find(project.id)) %>
+			<%= link_to "Add Collaboration", user_projects_new_collab_path(@user) %>
       <% end %>
 		<br>
 
@@ -109,7 +109,6 @@
 
 
 
-
 	
 
 
@@ -117,6 +116,9 @@
 
 	
 <% end %>
+
+	 
+
 
 
 
