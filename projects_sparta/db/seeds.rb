@@ -19,8 +19,8 @@
 # seeds for project we had 4 different ones just for a variety 
 
 
-  u1 = User.create(email: "pri@mail.com", password: "password", admin: false, name: "pri")
-  u2 = User.create!(email:"lucy@mail.com", password: "password",admin: true,name: "lucy")
+u1 = User.create(email: "pri@mail.com", password: "password", admin: false, name: "Priyam")
+u2 = User.create!(email:"lucy@mail.com", password: "password",admin: true,name: "Lucy")
 
 
 ### 2 users to test admin changes
@@ -34,4 +34,15 @@
   UserProject.create!(user_id: 1, project_id: p3.id )
   UserProject.create!(user_id: 2, project_id: p3.id )
   UserProject.create!(user_id: 2, project_id: p4.id )
+
+
+
+  Like.create!(user_id:1, project_id: 2)
+  Like.create!(user_id:1, project_id:3)
+  Like.create!(user_id:1, project_id:4)
+
+  Like.create!(user_id:2, project_id:2)
+  Like.create!(user_id:2 , project_id:1)
+
+
 ##### create a many to many bond for the users and the projects

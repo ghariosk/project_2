@@ -36,16 +36,19 @@
 	<br>
 
 	<%= f.label :image %>
-	<%= file_field_tag :image %>
+	<%= f.file_field :image %>
 
 	<%# A label and text field stores a project's github url. %>
 		<% if current_user.admin == true %>
 	      <%# A label and text field creates a checkbox that will approve projects. %>
-	      	<%= f.label :approved %>
-	      	<%= f.check_box :approved %>
-	  	<% end %>         
+
+	      <%= f.label :approved %>
+	      <%= f.check_box :approved, :class => "material-switch pull-right" %>
+	  	<% end %>                           
+        
 	  	<br>                  
 	  	<br>                  
+
 	<%# A submit button will render the form to the webpage. %>
 	<%= f.submit :class => "submit" %>
 <% end %>
