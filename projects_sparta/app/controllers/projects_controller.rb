@@ -2,12 +2,9 @@ class ProjectsController < ApplicationController
   def index
     @user=User.all.find(params[:user_id]) # sets the index page of the projects to yield a list of all the projects assigned to the user's id
     @like=Like.new
-    if params[:search]
-      @projects = Project.search(params[:search])
-    else
-      @projects = Project.all
+    @projects=@user.projects
     end
-  end
+  
 
   def show
     @user=User.all.find(params[:user_id]) # sets the show page of the projects to display the project associated to the user and id

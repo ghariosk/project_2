@@ -37,7 +37,7 @@
 	<% if action_name != "index" %>	</a> <% end %>
    <div class="buttonbox">
 		<div style='display:inline-block'>
-		   	<% if action_name == "index" && @user.admin == true %>
+		   	<% if action_name == "index" && current_user.admin == true %>
 						<p> 
 							 
 								<%= form_for ([@user, @user.projects.find(project.id)]), :html => {:class =>'check-box'} do |f| %>
@@ -45,7 +45,7 @@
 									<% f.submit :class => 'check-box' %>
 								<% end %>
 						</p>
-					<% end %>
+			<% end %>
 			</div>
 		<a href='<%=project.git%>' class="btn btn-social-icon btn-github white"> <span class="fa fa-github"> </span> 
  		</a>  
