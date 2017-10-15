@@ -3,7 +3,16 @@ class Project < ApplicationRecord
 
 	mount_uploader :image, ImageUploader
 
-	
+	# def self.search(search)
+	#   if search
+	#     find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+	#   else
+	#     find(:all)
+	#   end
+	# end
+	def self.search(search)
+		where("name ILIKE ?", "%#{search}%")
+	end
 
 	has_many :like
 	has_many :likers, 
@@ -12,8 +21,9 @@ class Project < ApplicationRecord
 	has_many :user_project
 	has_many :users, 
 	through: :user_project
-  
+
 	validates :name, :desc, :git, presence: true
-	validates :name, length: { minimum: 3, maximum: 100, message: "who the.fuck has a name thats that short/long, are you fuck bro? Is your momma fucked bro cos she named you that shit" }
+	validates :name, length: { minimum: 3, maximum: 100, message: "must be between 3 and 100 characters!" }
+
 
 end
