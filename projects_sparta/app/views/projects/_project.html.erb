@@ -1,4 +1,11 @@
+
+<% if @projects.blank? && action_name == "home"%>
+    <h4>There are no projects containing the term <%= params[:search] %>.</h4>
+<% end %>
+
 <% if project.approved == true || action_name == "index" || action_name == "show" %>
+
+
 	<div class="projectbox">
 		<a href="/users/<%=project.user_ids.first%>/projects/<%=project.id%>">
     		<div class="tile" style="background-image:url('<%= project.image.tile %>')">
@@ -7,16 +14,7 @@
 	<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
 					<h3> <%= project.name %> </h3>
 					<p> <%= project.desc %> </p>
-					<% if action_name == "index" && @user.admin == true %>
-					<p> 
-						Approved :  
-							<%= form_for ([@user, @user.projects.find(project.id)]), :html => {:class =>'check-box'} do |f| %>
-								<%= f.check_box :approved, :class =>'check-box' %>
-								<% f.submit :class => 'check-box' %>
-							<% end %>
-						<% end %>
-					</p>
-					<p> <%  @a = UserProject.all.where(project_id:project.id) %> </p>
+					<p> <% @a = UserProject.all.where(project_id:project.id) %> </p>
 					<p> Participants </p>
 					<%  @a.each_with_index do |element,index| %>
 						<%# Finds user names from User to render with projects. %>
@@ -25,7 +23,7 @@
 						<%# Finds user email from User to render with projects. %>
 						<%= User.find(element.user_id).name  %>
 				  	<% end %> 
-					<br>
+				
 				</div>
 			</div>
 			
@@ -33,24 +31,14 @@
 	
 		</a>
    <div class="buttonbox">
-
-	
-      
-      	   
-        <a href='<%=project.git%>' class="btn btn-social-icon btn-github white"> <span class="fa fa-github"> </span> 
- </a>  
+        <a href='<%=project.git%>' class="btn btn-social-icon btn-github white"> <span class="fa fa-github"> </span> </a>  
 
 
-      <a class="btn btn-social-icon btn-likedin black"> <span class="fa fa-linkedin"> </span> 
-      </a> 
-
-
-
-			
+      <a class="btn btn-social-icon btn-likedin black"> <span class="fa fa-linkedin"> </span> </a> 
 				<% if not action_name == "home" || "public#show"  %>
 					<% if user_signed_in? %> 
 					<%# This link will direct users to a page which will display their project. %>
-					<%= link_to "Show", user_project_path(@user, Project.find(project.id )),:class => "btn btn-primary btn-sm" %>
+					<%= link_to "Show", user_project_path(@user, Project.find(project.id )), :class => "btn btn-primary btn-sm" %>
 					<% end %>
 				<% elsif action_name == "home" %>
 					
@@ -66,7 +54,7 @@
           <%= link_to "Credit", user_projects_new_collab_path(@user),:class => "btn btn-info btn-sm" %>
 					<% end %>
 				<% elsif action_name == "show" %>
-					<%= link_to "Back", user_projects_path ,:class => "btn btn-primary btn-sm"%>	
+					<%= link_to "Back", user_projects_path(@user) ,:class => "btn btn-primary btn-sm"%>	
 		    	<% end %>
       
       
