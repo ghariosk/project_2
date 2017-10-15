@@ -1,39 +1,60 @@
-
 <% if project.approved == true || action_name == "index" || action_name == "show" %>
 
-	<div class="tile">
-		<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
-		 	<p> Name : <%= project.name %> </p>
-		 	<p> Description : <%= project.desc %> </p>
-		   	<div class="image">
-		   		<%= image_tag project.image %>
-		   	</div>	
-		 	<p> Git : <%= project.git %> </p>
+
+	<div class="tile" style="background-image:url('<%= project.image.tile %>')">
+
+	<div class="desc" onclick="location.href='<%=public_path(Project.find(project.id))%>'">
+
+	<%# Fields store information about a project, including name, description, image url, git url, and if a project has been approved. %>
+
+
+
+
+
+
+	<h3> <%= project.name %> </h3>
+	<p> <%= project.desc %> </p>
+
+	
+
+		   
+	<a href='<%=project.git%>' class="btn btn-social-icon btn-github white"> <span class="fa fa-github"> </span> 
+  </a>  
+
+
+  <a class="btn btn-social-icon btn-likedin black"> <span class="fa fa-linkedin"> </span> 
+  </a> 
+
+
+
+
+
 		 	<% if action_name == "index" && current_user.admin == true %>
-				<p> Approved :  
+			 
 				<%= form_for ([@user, @user.projects.find(project.id)]), :html => {:class =>'check-box'} do |f| %>
+				Approved:
 					<%= f.check_box :approved, :class =>'check-box' %>
 					<% f.submit :class => 'check-box' %>
 					<% end %>
 			<% end %>
-			</p>
+			
 			<p> <%  @a = UserProject.all.where(project_id:project.id) %> </p>
-			<p> Participants </p>
+			<p> Credits: 
 			<%  @a.each_with_index do |element,index| %>
 				<%# Finds user names from User to render with projects. %>
-				<%= User.find(element.user_id).email %>
 				<%# An email address is used with project_id to render matching projects. %>
-				<%# Finds user email from User to render with projects. %>
-				<%= User.find(element.user_id).name  %>
+				<%= User.find(element.user_id).name.capitalize + ", " %>
+
 		  	<% end %> 
-		  	<br>
+		  	</p>
+
 		<%# This if statement  directs users to particular paths. %>
 		<% if not action_name == "home" || "public#show"  %>
 			<%# This link will direct users to a page which will display their project. %>
 			<%= link_to "Show", user_project_path(@user, Project.find(project.id ))  %>	
 		<% elsif action_name == "home" %>
 			<%# This link will direct users to a show page of a requested project. %>
-			<%= link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
+			<%# link_to "Show", public_path(Project.find(project.id)) %>   <%# for some reason doesnt not work when dryer %>
 		<% elsif action_name == "home" || action_name == "index" %>
 		    <%# This link will direct users to an edit form where they can edit information about their projects. %>
 			<%= link_to "Edit", edit_user_project_path(@user, Project.find(project.id) ) %>
@@ -41,7 +62,65 @@
 
 			<%= link_to "Delete", user_project_path(@user, Project.find(project.id)), method: :delete  %>
 			<%= link_to "Show", user_project_path(@user, Project.find(project.id)) %>
-<% end %>
+			<%= link_to "Add Collaboration", user_projects_new_collab_path(@user) %>
+      <% end %>
 		<br>
+
 	</div>
+
+
+
+	</div>
+
+		
+
+<i class='btn like fa fa-thumbs-up <% if user_signed_in? %> <% if Like.where(user_id:current_user.id,project_id:project.id).blank? == false %> blue <% end %> <% end %>'> 
+
+<% if user_signed_in? %>
+
+
+
+<%# if Like.where(user_id:current_user.id,project_id:project.id).blank? == false %>
+
+
+<%# end %>
+
+
+		
+	
+	<%= form_for(@like, url: user_projects_create_like_path(current_user), :class => 'like') do |f| %>
+	<div style='display:none'>	
+		<%= f.collection_select :user_id, User.all, :id, :name, {:selected => current_user.id } %>
+		<%= f.collection_select :project_id, Project.all, :id, :name, {:selected => project.id } %>
+		<% f.submit :class => "btn btn-primary like" %>
+
+</div>
+	<% end %>
 <% end %>
+
+	
+
+
+
+	</i>  
+
+
+		<p> <%= Like.where(project_id:project.id).count() %> </p>
+
+
+
+	
+
+
+
+
+	
+<% end %>
+
+	 
+
+
+
+
+
+

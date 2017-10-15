@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   def index
     @user=User.all.find(params[:user_id]) # sets the index page of the projects to yield a list of all the projects assigned to the user's id
     @projects=@user.projects
+    @like=Like.new
   end
 
   def show
@@ -18,6 +19,9 @@ class ProjectsController < ApplicationController
   def create
     @user=User.all.find(params[:user_id]) # hydrate the data into the newly created databse of project and userproject
     new_project=Project.create(project_params)
+    new_project.save
+   
+
     @userproject=UserProject.create(project_id: new_project.id, user_id:@user.id)
     @userproject.save
     redirect_to user_projects_path
@@ -31,7 +35,8 @@ class ProjectsController < ApplicationController
 
   def update
     @user=User.all.find(params[:user_id]) #  update the database with the new entries
-    update=@user.projects.find(params[:id]).update(project_params)  
+    update=@user.projects.find(params[:id]).update(project_params)
+
     redirect_to user_projects_path
   end
 
@@ -39,6 +44,54 @@ class ProjectsController < ApplicationController
     @user=User.all.find(params[:user_id]) # deletes the database entry associated with the :id
     Project.destroy(params[:id])
     redirect_to user_projects_path
+  end
+
+
+  def new_collab 
+
+    @collab=UserProject.new
+     
+  
+  end
+
+  def create_collab
+
+    @a = "hello"
+
+
+    @collab=UserProject.all.where(user_id:userproject_params[:user_id],project_id:userproject_params[:project_id]).first_or_create(userproject_params) 
+    @collab.save
+    redirect_to user_projects_path
+
+  end
+
+
+  def new_like
+    @like=Like.new
+
+  end
+
+  def create_like
+
+    @liker=current_user
+    @like=Like.all.where(user_id:current_user.id,project_id:like_params[:project_id])
+
+   
+    if @like.blank? 
+
+    @like.create(like_params)
+    new_like.save
+
+    else
+
+  
+
+    Like.destroy(@like.first.id)
+
+    end
+
+    redirect_to root_url
+
   end
 
   protected
@@ -50,5 +103,13 @@ class ProjectsController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name)
+  end
+
+  def userproject_params
+    params.require(:user_project).permit(:user_id, :project_id)
+  end
+
+  def like_params
+    params.require(:like).permit(:user_id, :project_id)
   end
 end

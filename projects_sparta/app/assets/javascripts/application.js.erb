@@ -20,24 +20,51 @@
 
 //= require jquery3
 
+//= require bootstrap-select
+
+//= require select2-full
+
 
 
 $(function () {
-
-
-	console.log('hello')
-
-
 	$('.check-box').each(function () {
-
 		$(this).on('click', function () {
-
 			console.log('check')
-
 			$(this).submit()
+		})
+	})
 
-	 	})
+	$('.tile').hover(function () {
+		$(this).children().fadeIn(300)
+	})
 
+	$('.tile').mouseleave(function () {
+		$(this).children().fadeOut(300)
+	})
+
+	$('.submit').addClass('btn btn-primary')
+	$('.action').addClass('btn btn-primary')
+
+
+// 	$(".desc").click(function(){
+//    window.location=$(this).find("div").attr("href"); return false;
+// });
+
+	// $('.tile').hover(function () {
+	// $('[data-toggle="popover"]').popover()
+	// })
+
+	// $('.tryselect').select2({
+	// 	 placeholder: 'Select an option'
+	// });
+
+
+	$('.like').each(function () {
+		console.log('check')
+		$(this).on('click',function () {
+			console.log('check')
+			$(this).children().submit()
+		})
 	})
 
 })
