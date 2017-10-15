@@ -1,23 +1,11 @@
 class Project < ApplicationRecord
-
-
 	mount_uploader :image, ImageUploader
-
-	# def self.search(search)
-	#   if search
-	#     find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-	#   else
-	#     find(:all)
-	#   end
-	# end
 	def self.search(search)
 		where("name ILIKE ?", "%#{search}%")
 	end
-
 	has_many :like
 	has_many :likers, 
 	through: :like, class_name: "User", foreign_key: "user_id"
-
 	has_many :user_project
 	has_many :users, 
 	through: :user_project
