@@ -4,7 +4,7 @@
     <h3><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h3>
     <ul>
         <% @project.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+            <p><%= msg %></p>
         <% end %>
     </ul>
 <% end %>
@@ -21,13 +21,13 @@
 
 	<%# A label and text field stores the project's description. %>
 	<%= f.label :desc %>
-	<%= f.text_field :desc %>
+	<%= f.text_field :desc%>
 	<br>
 	<br>
 
 	<%# A label and text field stores an image url. %>
-	<%#= f.label :image %>
-	<%#= f.text_field :image %>
+	<%= f.label :image %>
+	<%= f.file_field :image %>
 
 	<br>
 	<br>
@@ -35,15 +35,12 @@
 	<%= f.text_field :git %>
 	<br>
 
-	<%= f.label :image %>
-	<%= f.file_field :image %>
-
 	<%# A label and text field stores a project's github url. %>
 		<% if current_user.admin == true %>
 	      <%# A label and text field creates a checkbox that will approve projects. %>
 
 	      <%= f.label :approved %>
-	      <%= f.check_box :approved, :class => "material-switch pull-right" %>
+	      <%= f.check_box :approved %>
 	  	<% end %>                           
         
 	  	<br>                  

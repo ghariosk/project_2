@@ -1,19 +1,25 @@
 class ProjectsController < ApplicationController
   def index
     @user=User.all.find(params[:user_id]) # sets the index page of the projects to yield a list of all the projects assigned to the user's id
-    @projects=@user.projects
     @like=Like.new
+    if params[:search]
+      @projects = Project.search(params[:search])
+    else
+      @projects = Project.all
+    end
   end
 
   def show
     @user=User.all.find(params[:user_id]) # sets the show page of the projects to display the project associated to the user and id
     @project= @user.projects.find(params[:id])
+    @like = Like.new
   end
 
   def new
     @user=User.all.find(params[:user_id]) # create a new database entry for a project and of USerProject, linking the user to the project
     @project=Project.new
     @userproject=UserProject.new
+    
   end
 
   def create
@@ -21,7 +27,7 @@ class ProjectsController < ApplicationController
      @project = Project.create(project_params)
     @userproject = UserProject.create(project_id: @project.id, user_id:@user.id)
     if @project.save
-      redirect_to user_projects_path
+      redirect_to home_path
     else
       render :new
     end
@@ -98,7 +104,7 @@ class ProjectsController < ApplicationController
   protected
 
   def project_params
-    params.require(:project).permit(:id, :name, :desc, :image, :git, :approved) # permits the exchanges of data between the controller 
+    params.require(:project).permit(:id, :name, :desc, :image, :git, :approved,:search) # permits the exchanges of data between the controller 
                                                                                 # and the database
   end
 
