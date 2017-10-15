@@ -1,0 +1,21 @@
+<h1> Create like</h1>
+
+
+<%= form_for(@like, url: user_projects_create_like_path) do |f| %>
+
+
+
+
+
+<%= f.collection_select :user_id, User.find(current_user.id), :id, :name, {:selected => current_user.id }, {:class => "selectpicker"} %>
+
+
+
+<%= f.collection_select :project_id, Project.all, :id, :name, {:selected => project.id }, {:class => "selectpicker"} %>
+
+<%= f.submit :class => "btn btn-primary" %>
+
+
+
+<% end %>
+</div>

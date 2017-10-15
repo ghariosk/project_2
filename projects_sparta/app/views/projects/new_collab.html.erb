@@ -1,0 +1,47 @@
+
+<h1> Create collaboration</h1>
+
+
+<%= form_for(@collab, url: user_projects_create_collab_path) do |f| %>
+
+
+
+<%= f.collection_select :user_id, User.all, :id, :name, {}, {:class => "selectpicker"} %>
+
+
+
+<br>
+<br>
+
+
+<%= f.collection_select :project_id, Project.all, :id, :name, {}, {:class => "selectpicker"} %>
+
+
+
+
+<br>
+<br>
+
+
+
+ 
+      
+
+    
+
+
+
+
+
+<%= f.submit :class => "btn btn-primary" %>
+
+
+
+<% end %>
+</div>
+
+
+
+
+
+
