@@ -1,13 +1,17 @@
 class PublicController < ApplicationController
 	def index
 		redirect_to root_url # routes the public/index url to home
+		
 	end
 	def show
 		@projects=Project.all
 		@project=Project.find(params[:id]) # routes the show page to display a single project of id set by the page parameter
 
 		@like=Like.new
-
+	
+	def index
+  	end
+	
 
 		if @project.approved == false
 			redirect_to root_url
@@ -15,9 +19,14 @@ class PublicController < ApplicationController
 	end
 	def home 
 
-		@projects=Project.all # routes the home page to display a list of all project
+		##@projects=Project.all # routes the home page to display a list of all project
 		@like=Like.new
 		@filter=Project.new
+		if params[:search]
+	      @projects = Project.search(params[:search])
+	    else
+	      @projects = Project.all
+	    end
 
 	end
 
@@ -40,8 +49,12 @@ class PublicController < ApplicationController
 	end
 
 
+
+
+
+
 	 def project_params
-    params.require(:project).permit(:id, :name, :desc, :image, :git, :approved) # permits the exchanges of data between the controller 
+    params.require(:project).permit(:id, :name, :desc, :image, :git, :approved, :search) # permits the exchanges of data between the controller 
                                                                                 # and the database
   end
 

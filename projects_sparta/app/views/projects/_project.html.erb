@@ -1,4 +1,11 @@
+
+<% if @projects.blank? %>
+    <h4>There are no projects containing the term <%= params[:search] %>.</h4>
+<% end %>
+
 <% if project.approved == true || action_name == "index" || action_name == "show" %>
+
+
 	<div class="projectbox">
 		<a href="/users/<%=project.user_ids.first%>/projects/<%=project.id%>">
     		<div class="tile" style="background-image:url('<%= project.image.tile %>')">
@@ -16,7 +23,7 @@
 							<% end %>
 						<% end %>
 					</p>
-					<p> <%  @a = UserProject.all.where(project_id:project.id) %> </p>
+					<p> <% @a = UserProject.all.where(project_id:project.id) %> </p>
 					<p> Participants </p>
 					<%  @a.each_with_index do |element,index| %>
 						<%# Finds user names from User to render with projects. %>

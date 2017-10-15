@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 	post 'public/create_filter', to: 'public#create_filter' 
 	get 'public/new_filter', to: 'public#new_filter'
 	get 'public/show_filter', to: 'public#show_filter'
-
+	#get 'public/?utf8=✓&name=#{:name}', to: 'public#search'
  	resources :public # automatically routes public to the the 7 restful routes t
   	get 'home', to: 'public#home' # home sends request to the home function in the public controller
   	devise_for :users, :controllers => { registrations: 'registrations'} # sets the route of the devise user signing in and signin-up 
