@@ -26,7 +26,7 @@
 
 
 u1 = User.create(email: "pri@mail.com", password: "password", admin: false, name: "Priyam")
-u2 = User.create!(email:"lucy@mail.com", password: "password",admin: true,name: "Lucy")
+u2 = User.create!(email:"lucy@mail.com", password: "password",admin: true,name: "Lucysssssss")
 u3 = User.create!(email:"jenny@mail.com", password: "password", admin: true, name: "Jenny")
 u4 = User.create!(email:"niall@mail.com", password: "password", admin: true, name: "Niall")
 
