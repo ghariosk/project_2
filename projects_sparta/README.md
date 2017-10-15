@@ -1,61 +1,34 @@
 # Project 2
 
-A project system for Sparta Global.
+Project 2 is a system developed specifically for Sparta Global that enables visitors to view projects that have been undertake by Sparta Global trainees.
 
-## Functionality and Services
+The web application was developed in Sublime with Ruby-on-Rails as the primary programming structure for the project. HTML-on-Rails, JQuery JavaScript and CSS with Bootstrap were also implemented into the application. Project 2 utilises many Gemfiles such as jquery-rails, popper_js (1.12.3), animate.css-rails (3.2), bootstrap-sass (3.3.6).
 
-### Getting Started
+## Functionality
+### General Visitors
+A visitor can enter the web application without having to sign in or creating a user account, although visitors may create accounts if they wish to. Visitors can view previous Sparta Global Trainee projects from tiles that are neatly displayed on the homepage.
 
-When first entering the web application, the user is greeted by a display of previous projects that trainee consultants at Sparta Global have undertaken. The user is able to manoeuvre through two navigation bars; one placed at the top of the page and one at the bottom.
+### Creating a user account
+Visitors are required to fill in a short sign-up form which takes an email address, password confirmations and the user's full name.
 
-### Log In
-When a user logs in, they can create their own projects, as well as editing and deleting them from the application. An admin user has full control over the application.
+### Log-in Users
+Once a user has created a log-in account they are given direct access to creating new projects. New project tiles take the project's name, a short description of the project and an image and GitHub url. They are also required to attach the project file. The created project will then appear on the homepage, and can be viewed in the user's personal projects page. Log-in may edit their user profiles if they would like to change passwords. If a profile is edited, the user must reconfirm their password to enable changes to be made.
 
-### Header Navigation Bar
+### Admin Users
+Admin users have the priviledge of a 'user base' webpage, which enables admin user's to edit, create and destroy projects. Admin users may add/remove project approvals and add/remove log-in user's admin status.
 
-The user can navigation to the homepage and public projects in a normal visitor mode. Users who are logged in can have access to their personal projects, as well as creating, viewing and deleting project tiles from the application. An admin user will have access to the user log, which allows project approval and user control (including setting users to admin).
+## Screenshots
+### Homepage
+![A screenshot of the homepage](app/assets/images/homepage_screenshot.jpg)
 
-## Implementation
+### New Project
+![A screenshot of the new project page](app/assets/images/new_project_screenshot.jpg)
 
-### Language
-The project was developed using a wide range of Ruby on Rails functions with the addition of Bootstrap. CSS, HTML on Rails and JQuery were also implemented into the design.
+### Edit User
+![A screenshot of the edit user page](app/assets/images/edit_user_screenshot.jpg)
 
-### Gemfiles
-* gem j-query-rails (the jquery gem for rails)
-* gem popper_js version 1.12.3 (popper gem for rails, which adds interactive functionality to Bootstrap)
-* gem animate.css-rails version 3.2.0 (animation css gem for rails)
-* gem bootstrap-sass version 3.3.6 (Bootstrap gem for rails)
-* gem devise
-
-### Database Creation
-Three databases were created for the project.
-
-### Database Initialization
-
-### Configuration
-
-## Deployment
+### User Base
+![A screenshot of the admin user base page](app/assets/images/user_base_screenshot.jpg)
 
 ## Authors
-
-This application was developed by Karl Gharious, Luke Heudebourck and Priyam Patel.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project was developed by Karl Gharios, Luke Heudebourck and Priyam Patel for Sparta Global.

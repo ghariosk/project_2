@@ -39,17 +39,19 @@ body
 { 
 	background-image: url("https://www.spartaglobal.com/img/media-hub-bg.jpg"); ///// so logo
 	background-repeat: repeat-y;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif !important;
 	background-size: 1500px 1000px;
 	text-align: center; 		//// so text and div are central
-	margin-top: 70px;			//// gap at top for nav bar
+
+			//// gap at top for nav bar
+
+	margin-top: 80px;			//// gap at top for nav bar
+
 	margin-bottom: 80px;		//// gap at bottom for footer bars
-	font-family: raleway;
 }
 
-
 img {
-
+	
     max-width: 100%;
     max-height: 100%;
 }
@@ -61,7 +63,6 @@ img {
 	position: relative;
 	margin: 0 auto;
 }
-
 
 
 .body {
@@ -127,7 +128,7 @@ img {
 	position:absolute;
 	font-size: 12px;
 	right:0;
-	top:0px;
+	top:25px;
 }
 
 /*a:hover {
@@ -135,8 +136,9 @@ img {
 }*/
 
 .tile {
-	height: 320px;				/* size for tiles*/
+	height: 320px;				/////size for tiles
 	width: 400px;
+
 	display:inline-block ;	 /*how to have them sitting next to one another*/
 	border: 1px solid grey;			/*grey border so we can have more styling*/
 	color: white ;	 /*text color*/
@@ -151,7 +153,6 @@ img {
 }
 
 .desc {
-
 	color:white;
 
 	background-color:rgba(0,0,0,0.9);
@@ -181,6 +182,22 @@ table {
 	background-color: green!important ;
 }
 
+.buttonbox{
+	width: 400px;
+	height: 50px;
+	background: linear-gradient(to bottom right, white, #f1f1f1);
+	display: inline-block;
+	position: relative;	
+}
+
+
+.projectbox{
+	height: 400px;				/* size for tiles*/
+	width: 400px;
+	display:inline-block ;		//// how to have them sitting next to one another
+	text-align: center;		///// have text central
+	position: relative;
+}
 
 tr:hover {
 	background-color: blue!important;
@@ -203,6 +220,7 @@ tr:hover {
 }
 
 
+
 .dropdown-toggle::after {
 	display:none !important;
 }
@@ -220,6 +238,11 @@ tr:hover {
 
 
 
+
+
+.forms{
+	text-align: center;
+}
 
 
 

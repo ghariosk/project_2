@@ -36,6 +36,7 @@ u2 = User.create!(email:"lucy@mail.com", password: "password",admin: true,name: 
   UserProject.create!(user_id: 2, project_id: p4.id )
 
 
+
   Like.create!(user_id:1, project_id: 2)
   Like.create!(user_id:1, project_id:3)
   Like.create!(user_id:1, project_id:4)
