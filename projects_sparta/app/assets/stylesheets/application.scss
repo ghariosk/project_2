@@ -31,7 +31,7 @@
 
 html {
     transition: all .3s;
-    font-size: 100%;  /////to make sure we have 
+    font-size: 100%;  /////to make sure we have correct font size; 
 }
 
 
@@ -42,11 +42,7 @@ body
 	font-family: 'Raleway', sans-serif !important;
 	background-size: 1500px 1000px;
 	text-align: center; 		//// so text and div are central
-
-			//// gap at top for nav bar
-
-	margin-top: 80px;			//// gap at top for nav bar
-
+	margin-top: 90px;			//// gap at top for nav bar
 	margin-bottom: 80px;		//// gap at bottom for footer bars
 }
 

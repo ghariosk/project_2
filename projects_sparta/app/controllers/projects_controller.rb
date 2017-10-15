@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
   def show
     @user=User.all.find(params[:user_id]) # sets the show page of the projects to display the project associated to the user and id
     @project= @user.projects.find(params[:id])
-    @like = Like.new
+    @like=Like.new
   end
 
   def new
@@ -52,54 +52,29 @@ class ProjectsController < ApplicationController
     Project.destroy(params[:id])
     redirect_to user_projects_path
   end
-
-
   def new_collab 
-
     @collab=UserProject.new
-     
-  
   end
 
   def create_collab
-
-    @a = "hello"
-
-
     @collab=UserProject.all.where(user_id:userproject_params[:user_id],project_id:userproject_params[:project_id]).first_or_create(userproject_params) 
     @collab.save
     redirect_to user_projects_path
-
   end
-
-
   def new_like
     @like=Like.new
-
   end
-
   def create_like
-
     @liker=current_user
     @like=Like.all.where(user_id:current_user.id,project_id:like_params[:project_id])
-
-   
     if @like.blank? 
-
     @like.create(like_params)
     new_like.save
-
     else
-
-  
-
     Like.destroy(@like.first.id)
-
     end
-
     redirect_to root_url
-
-  end
+    end
 
   protected
 

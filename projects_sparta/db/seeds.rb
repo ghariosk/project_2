@@ -21,6 +21,7 @@
   p9 = Project.create!(name: "118 Project", desc: "A DevOps project working alongside 118", git: "Url", approved: true)
 
 
+
 # seeds for project we had 4 different ones just for a variety 
 
 
@@ -35,6 +36,7 @@ u4 = User.create!(email:"niall@mail.com", password: "password", admin: true, nam
 
 
   User.find_by(email:"pri@mail.com").update(admin: true)
+
 
 
   UserProject.create!(user_id: 1, project_id: p1.id )
@@ -64,7 +66,7 @@ u4 = User.create!(email:"niall@mail.com", password: "password", admin: true, nam
   Like.create!(user_id:1 , project_id:6)
  
 
-Like.create!(user_id:2, project_id:2)
+  Like.create!(user_id:2, project_id:2)
   Like.create!(user_id:2, project_id:1)
 
 
