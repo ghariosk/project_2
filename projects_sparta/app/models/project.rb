@@ -15,7 +15,7 @@ class Project < ApplicationRecord
 	
 
 	validates :name, :desc, :git, presence: true
-	validates :name, length: { minimum: 5, maximum: 500, message: "must be between 5 and 500 characters!" }
+	validates :name, length: { minimum: 3, maximum: 500, message: "must be between 3 and 500 characters!" }
 
 
 end
