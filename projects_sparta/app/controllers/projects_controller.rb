@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
   def show
     @user=User.all.find(params[:user_id]) # sets the show page of the projects to display the project associated to the user and id
     @project= @user.projects.find(params[:id])
-   
+    @like = Like.new
   end
 
   def new
